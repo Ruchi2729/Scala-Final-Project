@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/Chau-Xochitl/Scala-Final-Project.svg?style=svg)](https://circleci.com/gh/Chau-Xochitl/Scala-Final-Project)
 # Scala
 
 Consuming apache spark MLLib for machine learning
