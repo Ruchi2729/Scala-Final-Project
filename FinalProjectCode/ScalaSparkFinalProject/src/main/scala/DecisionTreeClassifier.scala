@@ -16,8 +16,6 @@ object DecisionTreeClassifier {
 
     def getSparkSession=spark
 
-  
-
   def parseUserInformation(str: String): User3= {
     val fields = str.split(",")
     assert(fields.size == 24)
