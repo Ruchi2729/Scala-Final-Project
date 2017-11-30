@@ -22,6 +22,8 @@ object DecisionTreeClassifier {
     User3(fields(13).toInt, fields(14).toInt,fields(15).toInt,fields(20).toInt,fields(21).toInt,fields(22).toInt,fields(23).toInt)
   }
 
+  
+
   import spark.implicits._
   def readFileToDataFrame(filePath:String):Dataset[String]=spark.read.textFile(filePath)
 
