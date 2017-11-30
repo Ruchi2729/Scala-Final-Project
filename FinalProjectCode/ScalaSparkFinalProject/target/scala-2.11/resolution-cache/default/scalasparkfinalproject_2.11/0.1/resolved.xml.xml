@@ -4,7 +4,7 @@
 		module="scalasparkfinalproject_2.11"
 		revision="0.1"
 		status="integration"
-		publication="20171128205254"
+		publication="20171129225416"
 	>
 		<description>
 		ScalaSparkFinalProject
@@ -35,5 +35,7 @@
 		<dependency org="org.apache.spark" name="spark-core_2.11" rev="2.2.0" conf="compile->default(compile)"/>
 		<dependency org="org.apache.spark" name="spark-mllib_2.11" rev="2.2.0" conf="compile->default(compile)"/>
 		<dependency org="org.apache.spark" name="spark-sql_2.11" rev="2.2.0" conf="compile->default(compile)"/>
+		<dependency org="org.scalatest" name="scalatest_2.11" rev="3.0.1" conf="test->default(compile)"/>
+		<dependency org="org.scalamock" name="scalamock-scalatest-support_2.11" rev="3.5.0" conf="test->default(compile)"/>
 	</dependencies>
 </ivy-module>
