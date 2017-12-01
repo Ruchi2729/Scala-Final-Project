@@ -1,6 +1,6 @@
 import org.apache.spark.sql.SparkSession
 
-case class User(userId: Int, hotelClusterId: Int,srch_destination_id:Int,srch_adults_cnt:Int, isBooking: Float)
+case class User2(userId: Int, hotelClusterId: Int,srch_destination_id:Int,srch_adults_cnt:Int, isBooking: Float)
 
 object CollaborativeFilteringTest {
 
@@ -20,10 +20,10 @@ object CollaborativeFilteringTest {
     // For implicit conversions like converting RDDs to DataFrames
     import spark.implicits._
 
-    def parseRating(str: String): User = {
+    def parseRating(str: String): User2 = {
       val fields = str.split(",")
       assert(fields.size == 24)
-      User(fields(7).toInt, fields(23).toInt, fields(16).toInt,fields(13).toInt, fields(18).toFloat)
+      User2(fields(7).toInt, fields(23).toInt, fields(16).toInt,fields(13).toInt, fields(18).toFloat)
     }
 
 
@@ -57,11 +57,14 @@ object CollaborativeFilteringTest {
     val rmse = evaluator.evaluate(predictions)
     println(s"Root-mean-square error = $rmse")
 
-    // Generate top 10 movie recommendations for each user
-    val userRecs = model.recommendForAllUsers(10)
-    // Generate top 10 user recommendations for each movie
-    val movieRecs = model.recommendForAllItems(10)
+    // Generate top 10 hotel cluster recommendations for each user
+    val userRecs = model.recommendForAllUsers(5)
+
+//    // Generate top 10 user recommendations for each movie
+//    val movieRecs = model.recommendForAllItems(10)
     println(userRecs)
+
+
   }
 
 }
