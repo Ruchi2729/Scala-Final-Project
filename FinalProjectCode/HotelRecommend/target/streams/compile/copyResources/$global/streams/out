@@ -1,0 +1,4 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(C:\Mycode\Scala\Scala-Final-Project\FinalProjectCode\HotelRecommend\conf\application.conf,C:\Mycode\Scala\Scala-Final-Project\FinalProjectCode\HotelRecommend\target\scala-2.11\classes\application.conf)[0m
+[0m[[0mdebug[0m] [0m	(C:\Mycode\Scala\Scala-Final-Project\FinalProjectCode\HotelRecommend\conf\logback.xml,C:\Mycode\Scala\Scala-Final-Project\FinalProjectCode\HotelRecommend\target\scala-2.11\classes\logback.xml)[0m
+[0m[[0mdebug[0m] [0m	(C:\Mycode\Scala\Scala-Final-Project\FinalProjectCode\HotelRecommend\conf\routes,C:\Mycode\Scala\Scala-Final-Project\FinalProjectCode\HotelRecommend\target\scala-2.11\classes\routes)[0m

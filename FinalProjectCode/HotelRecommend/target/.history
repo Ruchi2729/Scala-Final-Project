@@ -1,0 +1,6 @@
+sbt update
+update
+cpmpile
+compile
+sbt run
+run
