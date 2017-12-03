@@ -105,6 +105,8 @@ object DecisionTreeClassifier {
     val model=trainDataFromFile("C:\\Users\\sweta\\Desktop\\export.csv")
     testTheModel(model,"C:\\Users\\sweta\\Desktop\\export.csv")
 
+    model.save("G:\\7200\\Ruchira\\model1")
+
   }
 
 }

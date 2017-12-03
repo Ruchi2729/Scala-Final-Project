@@ -1,5 +1,7 @@
 
 
+import org.apache.spark.ml.PipelineModel
+
 import scala.io.{Codec, Source}
 import org.scalatest.{FlatSpec, Matchers}
 
@@ -37,6 +39,23 @@ class DecisionTreeSpec extends FlatSpec with Matchers {
   //  accuracy.toFloat should be > (85)
     assert(accuracy>85)
   }
+
+
+  it should "successfully load  the trained model " in {
+    val model=PipelineModel.load("G:\\7200\\Ruchira\\model1")
+
+    val accuracy=DecisionTreeClassifier.testTheModel(model,"C:\\Users\\sweta\\Desktop\\export.csv")
+
+    //  accuracy.toFloat should be > (85)
+    assert(accuracy>85)
+  }
+
+  it should "it should recommend hotel clusters for specific user input " in {
+    val model=PipelineModel.load("G:\\7200\\Ruchira\\model1")
+
+  }
+
+
 
 
 }
