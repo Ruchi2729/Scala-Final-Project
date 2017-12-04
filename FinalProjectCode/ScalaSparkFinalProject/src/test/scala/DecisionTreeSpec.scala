@@ -1,5 +1,9 @@
 
 
+import DecisionTreeClassifier.{parseUserInformation, spark}
+import org.apache.spark.ml.PipelineModel
+import org.apache.spark.sql.{DataFrame, Row}
+
 import scala.io.{Codec, Source}
 import org.scalatest.{FlatSpec, Matchers}
 
@@ -39,5 +43,44 @@ class DecisionTreeSpec extends FlatSpec with Matchers {
   }
 
 
-}
+  it should "successfully load  the trained model " in {
+    val model=PipelineModel.load("G:\\7200\\Ruchira\\model1")
 
+    val accuracy=DecisionTreeClassifier.testTheModel(model,"C:\\Users\\sweta\\Desktop\\export.csv")
+
+    //  accuracy.toFloat should be > (85)
+    assert(accuracy>85)
+  }
+
+  it should "it should recommend hotel clusters for specific user input " in {
+    val model=PipelineModel.load("G:\\7200\\Ruchira\\model1")
+    val adultCount=2
+    val childrenCount=1
+    val roomCount=1
+    val hotelContinent=1
+    val hotelCountry=50
+    val hotelMarket=696
+
+    //val User3=adultCount+","+childrenCount+","+hotelContinent+","+hotelCountry+",";
+
+    val df = List(User3(adultCount,childrenCount,roomCount,hotelContinent,hotelCountry,hotelMarket,0))
+
+val spark=DecisionTreeClassifier.getSparkSession
+    import spark.implicits._
+
+    val rdd=spark.createDataset(df).toDF("adultCount","childrenCount","hotelContinent","hotelCountry","hotelMarket","hotelCluster")
+
+//val rdd2=rdd.as[User3]
+
+    val dtPredictions = model.transform(rdd)
+    // Select example rows to display.
+    dtPredictions.select("prediction", "multiClassLabel", "features").show(1)
+
+
+
+  }
+
+
+
+
+}

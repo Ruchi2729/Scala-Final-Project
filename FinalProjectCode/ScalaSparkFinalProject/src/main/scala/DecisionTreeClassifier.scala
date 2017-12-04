@@ -1,5 +1,7 @@
 import org.apache.spark.ml.PipelineModel
+import org.apache.spark.ml.classification.DecisionTreeClassificationModel
 import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
+import org.apache.spark.ml.feature.IndexToString
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.{DataFrame, Dataset, SparkSession}
 case class User3(adultCount: Int,childrenCount:Int,roomCount:Int,hotelContinent:Int,hotelCountry:Int,hotelMarket:Int,hotelCluster:Int)
@@ -44,6 +46,10 @@ object DecisionTreeClassifier {
     trainingRDD1.cache
     //trainingRDD1.selectExpr()
 
+
+    // Split the data into training and test sets (30% held out for testing).
+    val Array(trainData, testData) = trainingRDD1.randomSplit(Array(0.8, 0.2))
+
     import org.apache.spark.ml.feature.{StringIndexer, VectorAssembler}
 
 
@@ -71,14 +77,21 @@ object DecisionTreeClassifier {
     //PCA
     val pca = new PCA().setInputCol("rawFeaturesIndexed").setOutputCol("features").setK(6)
     //label for multi class classifier
-    val bucketizer = new Bucketizer().setInputCol("hotelCluster").setOutputCol("multiClassLabel").setSplits(Array(Double.NegativeInfinity, 0.0, 15.0, Double.PositiveInfinity))
+   // val bucketizer = new Bucketizer().setInputCol("hotelCluster").setOutputCol("multiClassLabel").setSplits(Array(Double.NegativeInfinity, 0.0, 15.0, Double.PositiveInfinity))
+   val labelIndexer = new StringIndexer()
+     .setInputCol("hotelCluster")
+     .setOutputCol("indexedLabel")
+     .fit(trainData)
+    // Convert indexed labels back to original labels.
+    val labelConverter = new IndexToString()
+      .setInputCol("prediction")
+      .setOutputCol("predictedLabel")
+      .setLabels(labelIndexer.labels)
     // Train a DecisionTree model.
-    val dt = new DecisionTreeClassifier().setLabelCol("multiClassLabel").setFeaturesCol("features")
+    val dt = new DecisionTreeClassifier().setLabelCol("indexedLabel").setFeaturesCol("features")
     // Chain all into a Pipeline
-    val dtPipeline = new Pipeline().setStages(Array(adultCountIndexer, childrenCountIndexer, roomCountIndexer, continentIndexer, countryIndexer, marketIndexer,assembler, indexer, pca, bucketizer, dt))
+    val dtPipeline = new Pipeline().setStages(Array(labelIndexer,adultCountIndexer, childrenCountIndexer, roomCountIndexer, continentIndexer, countryIndexer, marketIndexer,assembler, indexer, pca, dt,labelConverter))
     // Train model.
-    // Split the data into training and test sets (30% held out for testing).
-    val Array(trainData, testData) = trainingRDD1.randomSplit(Array(0.8, 0.2))
     dtPipeline.fit(trainData)
   }
 
@@ -87,16 +100,33 @@ object DecisionTreeClassifier {
     val data=filterAndParseToDataset(filePath)
     val Array(trainData, testData) = data.randomSplit(Array(0.8, 0.2))
     // Make predictions.
-    val dtPredictions = model.transform(testData)
-    // Select example rows to display.
-    dtPredictions.select("prediction", "multiClassLabel", "features").show(100)
+//    val dtPredictions = model.transform(testData)
+//    // Select example rows to display.
+//    dtPredictions.select("prediction", "multiClassLabel", "features").show(100)
+//
+//    val evaluator = new MulticlassClassificationEvaluator()
+//      .setLabelCol("multiClassLabel")
+//      .setPredictionCol("prediction")
+//      .setMetricName("accuracy")
+//    val accuracy = evaluator.evaluate(dtPredictions)
+//    println("Test set accuracy = " + accuracy)
+//    accuracy.toFloat*100
+// Make predictions.
+val predictions = model.transform(testData)
 
+    // Select example rows to display.
+    predictions.select("predictedLabel", "hotelCluster", "features").show(5)
+
+    // Select (prediction, true label) and compute test error.
     val evaluator = new MulticlassClassificationEvaluator()
-      .setLabelCol("multiClassLabel")
+      .setLabelCol("indexedLabel")
       .setPredictionCol("prediction")
       .setMetricName("accuracy")
-    val accuracy = evaluator.evaluate(dtPredictions)
-    println("Test set accuracy = " + accuracy)
+    val accuracy = evaluator.evaluate(predictions)
+    println("Test Error = " + (1.0 - accuracy))
+
+    val treeModel = model.stages(2).asInstanceOf[DecisionTreeClassificationModel]
+    println("Learned classification tree model:\n" + treeModel.toDebugString)
     accuracy.toFloat*100
   }
 
@@ -104,6 +134,8 @@ object DecisionTreeClassifier {
   def main(args: Array[String]): Unit = {
     val model=trainDataFromFile("C:\\Users\\sweta\\Desktop\\export.csv")
     testTheModel(model,"C:\\Users\\sweta\\Desktop\\export.csv")
+
+    model.save("G:\\7200\\Ruchira\\model1")
 
   }
 

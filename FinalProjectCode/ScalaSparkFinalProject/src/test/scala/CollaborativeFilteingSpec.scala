@@ -1,5 +1,8 @@
 
 
+import org.apache.spark.ml.{Pipeline, PipelineModel}
+import org.apache.spark.ml.classification.DecisionTreeClassifier
+
 import scala.io.{Codec, Source}
 import org.scalatest.{FlatSpec, Matchers}
 
@@ -32,11 +35,12 @@ class CollaborativeFilteingSpec extends FlatSpec with Matchers {
 
     val model=CollaborativeFilter.tainCollaborativeFilter("C:\\Users\\sweta\\Desktop\\export.csv")
 
-    val accuracy=CollaborativeFilter.testTheModel(model,"C:\\Users\\sweta\\Desktop\\export.csv")
+    val accuracy=CollaborativeFilter .testTheModel(model,"C:\\Users\\sweta\\Desktop\\export.csv")
 
     //  accuracy.toFloat should be > (85)
     assert(accuracy>85)
   }
+
 
 
 }
