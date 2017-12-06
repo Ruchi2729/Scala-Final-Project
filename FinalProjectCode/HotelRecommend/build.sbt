@@ -2,16 +2,28 @@ name := "Hotel Recommend"
  
 version := "1.0" 
       
-lazy val `musicrecommend` = (project in file(".")).enablePlugins(PlayScala)
+lazy val `hotelrecommend` = (project in file(".")).enablePlugins(PlayScala)
+
+val scalaTestVersion = "3.0.1"
 
 resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases"
       
 resolvers += "Akka Snapshot Repository" at "http://repo.akka.io/snapshots/"
       
-scalaVersion := "2.11.11"
+scalaVersion := "2.11.8"
 
-libraryDependencies ++= Seq( jdbc , ehcache , ws , specs2 % Test , guice )
+libraryDependencies ++= Seq( jdbc , ehcache , ws , specs2 % Test , guice,
+  "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test,
+  "com.fasterxml.jackson.core" % "jackson-core" % "2.8.7",
+  "com.fasterxml.jackson.core" % "jackson-databind" % "2.8.7",
+  "com.fasterxml.jackson.core" % "jackson-annotations" % "2.8.7",
+  "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.8.7",
+  "org.apache.spark" % "spark-core_2.11" % "2.2.0",
+  "org.webjars" %% "webjars-play" % "2.5.0-1",
+  "org.webjars" % "bootstrap" % "3.3.6",
+  "org.apache.spark" % "spark-mllib_2.11" % "2.2.0",
+  "org.apache.spark" % "spark-sql_2.11" % "2.2.0",
+  "com.adrianhurt" %% "play-bootstrap" % "1.0-P25-B3")
 
-unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )  
+// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
 
-      

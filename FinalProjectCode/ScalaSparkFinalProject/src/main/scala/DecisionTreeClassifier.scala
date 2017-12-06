@@ -99,20 +99,8 @@ object DecisionTreeClassifier {
 
     val data=filterAndParseToDataset(filePath)
     val Array(trainData, testData) = data.randomSplit(Array(0.8, 0.2))
-    // Make predictions.
-//    val dtPredictions = model.transform(testData)
-//    // Select example rows to display.
-//    dtPredictions.select("prediction", "multiClassLabel", "features").show(100)
-//
-//    val evaluator = new MulticlassClassificationEvaluator()
-//      .setLabelCol("multiClassLabel")
-//      .setPredictionCol("prediction")
-//      .setMetricName("accuracy")
-//    val accuracy = evaluator.evaluate(dtPredictions)
-//    println("Test set accuracy = " + accuracy)
-//    accuracy.toFloat*100
-// Make predictions.
-val predictions = model.transform(testData)
+
+    val predictions = model.transform(testData)
 
     // Select example rows to display.
     predictions.select("predictedLabel", "hotelCluster", "features").show(5)
@@ -125,9 +113,31 @@ val predictions = model.transform(testData)
     val accuracy = evaluator.evaluate(predictions)
     println("Test Error = " + (1.0 - accuracy))
 
-    val treeModel = model.stages(2).asInstanceOf[DecisionTreeClassificationModel]
-    println("Learned classification tree model:\n" + treeModel.toDebugString)
+//    val treeModel = model.stages(2).asInstanceOf[DecisionTreeClassificationModel]
+    //println("Learned classification tree model:\n" + treeModel.toDebugString)
     accuracy.toFloat*100
+  }
+
+  def getRecommendationsFor(model:PipelineModel,user:User3,modelPath:String):String={
+    val df = List(user)
+
+    val spark=DecisionTreeClassifier.getSparkSession
+    import spark.implicits._
+
+    val rdd=spark.createDataset(df).toDF("adultCount","childrenCount","roomCount","hotelContinent","hotelCountry","hotelMarket","hotelCluster")
+
+    //val rdd2=rdd.as[User3]
+
+    val dtPredictions = model.transform(rdd)
+    // Select example rows to display.
+    // Select example rows to display.
+    dtPredictions.select("predictedLabel", "hotelCluster", "features").show(5)
+
+    // val x=userRecs.select($"recommendations").where($"userId"===57020).rdd.first().get(0)
+    val y=dtPredictions.select($"predictedLabel").rdd.first().get(0).toString()
+
+    print(y)
+    y
   }
 
 
@@ -135,7 +145,7 @@ val predictions = model.transform(testData)
     val model=trainDataFromFile("C:\\Users\\sweta\\Desktop\\export.csv")
     testTheModel(model,"C:\\Users\\sweta\\Desktop\\export.csv")
 
-    model.save("G:\\7200\\Ruchira\\model1")
+    model.save("G:\\7200\\Ruchira\\modelDecisionTree")
 
   }
 

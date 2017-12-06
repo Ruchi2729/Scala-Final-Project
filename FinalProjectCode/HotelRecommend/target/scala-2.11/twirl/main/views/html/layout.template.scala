@@ -32,16 +32,32 @@ Seq[Any](format.raw/*1.32*/("""
         <link rel="stylesheet" media="screen" href=""""),_display_(/*7.54*/routes/*7.60*/.Assets.versioned("stylesheets/bootstrap.min.css")),format.raw/*7.110*/("""">
         <link rel="stylesheet" media="screen" href=""""),_display_(/*8.54*/routes/*8.60*/.Assets.versioned("stylesheets/bootstrap-theme.min.css")),format.raw/*8.116*/("""">
         <link rel="shortcut icon" type="image/png" href=""""),_display_(/*9.59*/routes/*9.65*/.Assets.versioned("images/favicon.png")),format.raw/*9.104*/("""">
+        <link rel="stylesheet" media="screen" href=""""),_display_(/*10.54*/routes/*10.60*/.Assets.versioned("stylesheets/style.css")),format.raw/*10.102*/("""">
+        <!-- Latest compiled and minified CSS -->
 
     </head>
     <body>
-        <div class = "container">
-          """),_display_(/*14.12*/content),format.raw/*14.19*/("""
-        """),format.raw/*15.9*/("""</div>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Expedia Hotel Recommendation Site</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">User's Page</a></li>
+                <li><a href="#">Analytics Dashboard</a></li>
+                <li><a href="#">Page 3</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <script src=""""),_display_(/*17.23*/routes/*17.29*/.Assets.versioned("js/costum.js")),format.raw/*17.62*/("""" type="text/javascript"></script>
-        <script src=""""),_display_(/*18.23*/routes/*18.29*/.Assets.versioned("js/bootstrap.min.js")),format.raw/*18.69*/("""" type="text/javascript"></script>
-        <script src=""""),_display_(/*19.23*/routes/*19.29*/.Assets.versioned("js/jquery-3.2.1.min.js")),format.raw/*19.72*/("""" type="text/javascript"></script>
+        <div class = "container">
+          """),_display_(/*30.12*/content),format.raw/*30.19*/("""
+        """),format.raw/*31.9*/("""</div>
+
+        <!--<script src=""""),_display_(/*33.27*/routes/*33.33*/.Assets.versioned("js/costum.js")),format.raw/*33.66*/("""" type="text/javascript"></script>-->
+        <!--<script src=""""),_display_(/*34.27*/routes/*34.33*/.Assets.versioned("js/bootstrap.min.js")),format.raw/*34.73*/("""" type="text/javascript"></script>-->
+        <!--<script src=""""),_display_(/*35.27*/routes/*35.33*/.Assets.versioned("js/jquery-3.2.1.min.js")),format.raw/*35.76*/("""" type="text/javascript"></script>-->
     </body>
 </html>
 """))
@@ -60,11 +76,11 @@ Seq[Any](format.raw/*1.32*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Thu Nov 30 16:05:37 EST 2017
-                  SOURCE: C:/Mycode/Scala/Scala-Final-Project/FinalProjectCode/HotelRecommend/app/views/layout.scala.html
-                  HASH: f30e5852c51fddb0d97c58f26d27ad7594a29f60
-                  MATRIX: 735->1|860->31|887->32|973->92|998->97|1086->159|1100->165|1162->206|1244->262|1258->268|1329->318|1411->374|1425->380|1502->436|1589->497|1603->503|1663->542|1762->614|1790->621|1826->630|1883->660|1898->666|1952->699|2036->756|2051->762|2112->802|2196->859|2211->865|2275->908
-                  LINES: 21->1|26->1|27->2|30->5|30->5|31->6|31->6|31->6|32->7|32->7|32->7|33->8|33->8|33->8|34->9|34->9|34->9|39->14|39->14|40->15|42->17|42->17|42->17|43->18|43->18|43->18|44->19|44->19|44->19
+                  DATE: Mon Dec 04 21:31:07 EST 2017
+                  SOURCE: G:/7200/Scala-Final-Project/FinalProjectCode/HotelRecommend/app/views/layout.scala.html
+                  HASH: 629ed2ff8ccd9e7181c7b0ebfbad00032f745134
+                  MATRIX: 735->1|860->31|888->33|977->96|1002->101|1091->164|1105->170|1167->211|1250->268|1264->274|1335->324|1418->381|1432->387|1509->443|1597->505|1611->511|1671->550|1755->607|1770->613|1834->655|2535->1329|2563->1336|2600->1346|2663->1382|2678->1388|2732->1421|2824->1486|2839->1492|2900->1532|2992->1597|3007->1603|3071->1646
+                  LINES: 21->1|26->1|27->2|30->5|30->5|31->6|31->6|31->6|32->7|32->7|32->7|33->8|33->8|33->8|34->9|34->9|34->9|35->10|35->10|35->10|55->30|55->30|56->31|58->33|58->33|58->33|59->34|59->34|59->34|60->35|60->35|60->35
                   -- GENERATED --
               */
           

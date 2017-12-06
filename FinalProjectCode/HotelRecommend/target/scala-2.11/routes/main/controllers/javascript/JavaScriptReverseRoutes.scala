@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Mycode/Scala/Scala-Final-Project/FinalProjectCode/HotelRecommend/conf/routes
-// @DATE:Thu Nov 30 16:05:37 EST 2017
+// @SOURCE:G:/7200/Scala-Final-Project/FinalProjectCode/HotelRecommend/conf/routes
+// @DATE:Tue Dec 05 02:40:14 EST 2017
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -11,26 +11,6 @@ import _root_.controllers.Assets.Asset
 // @LINE:6
 package controllers.javascript {
 
-  // @LINE:10
-  class ReverseAsyncController(_prefix: => String) {
-
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:10
-    def message: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.AsyncController.message",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "message"})
-        }
-      """
-    )
-  
-  }
-
   // @LINE:6
   class ReverseHomeController(_prefix: => String) {
 
@@ -38,6 +18,16 @@ package controllers.javascript {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:10
+    def recos: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.recos",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "rec"})
+        }
+      """
+    )
   
     // @LINE:6
     def home: JavaScriptReverseRoute = JavaScriptReverseRoute(
@@ -49,22 +39,12 @@ package controllers.javascript {
       """
     )
   
-  }
-
-  // @LINE:12
-  class ReverseAssets(_prefix: => String) {
-
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:12
-    def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.Assets.versioned",
+    // @LINE:11
+    def recos2: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.recos2",
       """
-        function(file1) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[play.api.mvc.PathBindable[Asset]].javascriptUnbind + """)("file", file1)})
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "rec2"})
         }
       """
     )
@@ -72,7 +52,7 @@ package controllers.javascript {
   }
 
   // @LINE:8
-  class ReverseCountController(_prefix: => String) {
+  class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
@@ -80,11 +60,11 @@ package controllers.javascript {
 
   
     // @LINE:8
-    def count: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.CountController.count",
+    def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Assets.versioned",
       """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "count"})
+        function(file1) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[play.api.mvc.PathBindable[Asset]].javascriptUnbind + """)("file", file1)})
         }
       """
     )

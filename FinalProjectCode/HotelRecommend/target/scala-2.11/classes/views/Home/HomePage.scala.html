@@ -1,0 +1,82 @@
+@(recommendedHotelCluster:String,listOfRecos: List[String])
+@layout("7250-Hotel Recommendatins"){
+
+
+    <!--<p>-->
+       <!--Hotel Recommend-->
+    <!--</p>-->
+    >
+
+<div class="well well-lg">Select the User(Recommendation According to similar Users: Collaborative filtering)
+    <form name="input" action="/rec" method="get" >
+
+        <!--<select name="id">-->
+            <!--<option value=1234>User1</option>-->
+            <!--<option value=1234>User2</option>-->
+            <!--<option value=1234>User3</option>-->
+            <!--<option value=1234>User4</option>-->
+        <!--</select>-->
+        <!--<br><br>-->
+
+        <div class="form-group">
+            <label for="userid">User Id</label>
+            <input type="number" class="form-control" name="userid" id="userid" placeholder="Enter User Id">
+        </div>
+        <input type="submit">
+
+
+
+
+
+    </form>
+    <div class="well well-sm" id="colabRecos">Recommendations:@recommendedHotelCluster</div>
+</div>
+<div class="well well-lg">Give User Input(Recommendations based on Decision Tree Predictive Model)
+    <form action="/rec2" method="get" >
+        <div class="form-group">
+            <label for="HotelMarket">Hotel Market</label>
+            <input type="text" class="form-control" id="HotelMarket" name="hotelMarket" placeholder="Enter Hotel Market">
+        </div>
+        <div class="form-group">
+            <label for="HotelContinent">Hotel Continent</label>
+            <input type="text" class="form-control" id="HotelContinent" name="hotelContinent" placeholder="Enter Hotel Continent">
+        </div>
+        <div class="form-group">
+            <label for="HotelCountry">Hotel Country</label>
+            <input type="text" class="form-control" id="HotelCountry" name="hotelCountry" placeholder="Enter Hotel Country">
+        </div>
+        <div class="form-group">
+            <label for="AdultCount">Adult Count</label>
+            <input type="text" class="form-control" id="AdultCount" name="adultCount" placeholder="Enter Adult Count">
+        </div>
+
+        <div class="form-group">
+            <label for="ChildrenCount">Children Count</label>
+            <input type="text" class="form-control" id="ChildrenCount" name="childrenCount" placeholder="Enter Children Count">
+        </div>
+        <div class="form-group">
+            <label for="ChildrenCount">Children Count</label>
+            <input type="text" class="form-control" id="roomCount" name="roomCount" placeholder="Enter Room Count">
+        </div>
+
+        <input type="hidden" class="form-control" id="hotelCluster" name="hotelCluster" value=0 placeholder="Enter Room Count">
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div class="well well-sm">Recommendations as per user input(the hotelClusterId recommended by predicting the one user is most likey to choose
+        @for(index <- 0 until listOfRecos.size){
+        @if(index % 3 == 0){
+        <ul>
+            }
+
+            <li>@listOfRecos(index)</li>
+
+            @if(index % 3 == 2 || index == (listOfRecos.size - 1)){
+        </ul>
+        }
+        }
+    </div>
+</div>
+
+
+}

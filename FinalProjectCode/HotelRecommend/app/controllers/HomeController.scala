@@ -3,15 +3,48 @@ package controllers
 import javax.inject._
 
 import play.api.mvc._
+import services.MLModels
 import views.html.index
 import views.html.Home.HomePage
+import play.api.data._
+import play.api.data.Forms._
+import views.html.helper.form
 
+
+case class UserData(userid: Int)
+case class appUser(adultCount: Int,childrenCount:Int,roomCount:Int,hotelContinent:Int,hotelCountry:Int,hotelMarket:Int,hotelCluster:Int)
+
+//, adultCount: Int,childrenCount:Int,roomCount:Int,hotelContinent:Int,hotelCountry:Int,hotelMarket:Int
 /**
  * This controller creates an `Action` to handle HTTP requests to the
  * application's home page.
  */
 @Singleton
-class HomeController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
+class HomeController @Inject()(cc: ControllerComponents,mlModel: MLModels) extends AbstractController(cc)   {
+
+  val userForm = Form(
+    mapping(
+      "userid" -> number
+//      "adultCount" -> number,
+//      "childrenCount" -> number,
+//      "roomCount" -> number,
+//      "hotelContinent" -> number,
+//      "hotelCountry" -> number,
+//      "hotelMarket" -> number
+    )(UserData.apply)(UserData.unapply)
+  )
+
+  val userForm1 = Form(
+    mapping(
+            "adultCount" -> number,
+            "childrenCount" -> number,
+            "roomCount" -> number,
+            "hotelContinent" -> number,
+            "hotelCountry" -> number,
+            "hotelMarket" -> number,
+            "hotelCluster"->number
+    )(appUser.apply)(appUser.unapply)
+  )
 
   /**
    * Create an Action to render an HTML page with a welcome message.
@@ -23,8 +56,24 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
     Ok("Your new application is ready.")
   }
 
-  def home() = Action {
-    Ok(views.html.Home.HomePage.render())
+  def home() = Action {request=>
+    Ok(views.html.Home.HomePage.render("none",List("none")))
+  }
+
+def recos()=Action { implicit request=>
+    //val UserData(id,adultCount,childrenCount,roomCount,hotelContinent,hotelCountry,hotelMarket) = userForm.bindFromRequest.ge
+
+    val UserData(userid)=userForm.bindFromRequest.get
+  val x="none"
+    val recommendedHotelCluster = mlModel.getRecosUsingCollaborativeFiltering(userid)
+    Ok(views.html.Home.HomePage.render(x,recommendedHotelCluster))
+}
+
+  def recos2()=Action {  implicit request=>
+    val x:String=mlModel.getRecosUsingDecisionTree(userForm1.bindFromRequest.get)
+    Ok(views.html.Home.HomePage.render(x,List("1","2","3")))
+
+
   }
 
 

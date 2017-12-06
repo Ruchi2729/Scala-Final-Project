@@ -4,7 +4,7 @@
 		module="hotel-recommend_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20171130160525"
+		publication="20171206022501"
 	>
 		<description>
 		Hotel Recommend
@@ -40,8 +40,8 @@
 		<artifact name="hotel-recommend_2.11" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 	</publications>
 	<dependencies>
-		<dependency org="org.scala-lang" name="scala-compiler" rev="2.11.11" conf="scala-tool->default,optional(default)"/>
-		<dependency org="org.scala-lang" name="scala-library" rev="2.11.11" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="org.scala-lang" name="scala-compiler" rev="2.11.8" conf="scala-tool->default,optional(default)"/>
+		<dependency org="org.scala-lang" name="scala-library" rev="2.11.8" conf="scala-tool->default,optional(default);compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="twirl-api_2.11" rev="1.3.12" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-server_2.11" rev="2.6.7" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-test_2.11" rev="2.6.7" conf="test->default(compile)"/>
@@ -54,5 +54,16 @@
 		<dependency org="com.typesafe.play" name="play-ahc-ws_2.11" rev="2.6.7" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-specs2_2.11" rev="2.6.7" conf="test->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-guice_2.11" rev="2.6.7" conf="compile->default(compile)"/>
+		<dependency org="org.scalatestplus.play" name="scalatestplus-play_2.11" rev="1.5.1" conf="test->default(compile)"/>
+		<dependency org="com.fasterxml.jackson.core" name="jackson-core" rev="2.8.7" conf="compile->default(compile)"/>
+		<dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.8.7" conf="compile->default(compile)"/>
+		<dependency org="com.fasterxml.jackson.core" name="jackson-annotations" rev="2.8.7" conf="compile->default(compile)"/>
+		<dependency org="com.fasterxml.jackson.module" name="jackson-module-scala_2.11" rev="2.8.7" conf="compile->default(compile)"/>
+		<dependency org="org.apache.spark" name="spark-core_2.11" rev="2.2.0" conf="compile->default(compile)"/>
+		<dependency org="org.webjars" name="webjars-play_2.11" rev="2.5.0-1" conf="compile->default(compile)"/>
+		<dependency org="org.webjars" name="bootstrap" rev="3.3.6" conf="compile->default(compile)"/>
+		<dependency org="org.apache.spark" name="spark-mllib_2.11" rev="2.2.0" conf="compile->default(compile)"/>
+		<dependency org="org.apache.spark" name="spark-sql_2.11" rev="2.2.0" conf="compile->default(compile)"/>
+		<dependency org="com.adrianhurt" name="play-bootstrap_2.11" rev="1.0-P25-B3" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

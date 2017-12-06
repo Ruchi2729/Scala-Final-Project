@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Mycode/Scala/Scala-Final-Project/FinalProjectCode/HotelRecommend/conf/routes
-// @DATE:Thu Nov 30 16:05:37 EST 2017
+// @SOURCE:G:/7200/Scala-Final-Project/FinalProjectCode/HotelRecommend/conf/routes
+// @DATE:Tue Dec 05 02:40:14 EST 2017
 
 
 package router {

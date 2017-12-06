@@ -11,6 +11,10 @@ import org.scalatest.{FlatSpec, Matchers}
 
 class DecisionTreeSpec extends FlatSpec with Matchers {
 
+  val dataPath="C:\\Users\\sweta\\Desktop\\export.csv"
+
+  val decisionTreeModelPath="G:\\7200\\Ruchira\\modelDecisionTree"
+
   behavior of "Decision Tree Classifier Model"
 
   it should "Parse User Information correctly from file" in {
@@ -23,37 +27,38 @@ class DecisionTreeSpec extends FlatSpec with Matchers {
 
   it should "Parse all data to dataset of  million records" in {
 
-    val dataset1=DecisionTreeClassifier.filterAndParseToDataset("C:\\Users\\sweta\\Desktop\\export.csv")
+    val dataset1=DecisionTreeClassifier.filterAndParseToDataset(dataPath)
     val numOfRecords=dataset1.toDF().count().toInt
     numOfRecords shouldBe 1000000
 
   }
 
 
+//
+//
+//  it should "be able to train and test the Decision Tree model" in {
+//
+//    val model=DecisionTreeClassifier.trainDataFromFile(dataPath)
+//
+//    val accuracy=DecisionTreeClassifier.testTheModel(model,dataPath)
+//
+//
+//  //  accuracy.toFloat should be > (85)
+//    assert(accuracy>85)
+//  }
+//
+//
+//  it should "successfully load  the trained model " in {
+//    val model=PipelineModel.load(decisionTreeModelPath)
+//
+//    val accuracy=DecisionTreeClassifier.testTheModel(model,dataPath)
+//
+//    //  accuracy.toFloat should be > (85)
+//    assert(accuracy>85)
+//  }
 
-
-  it should "be able to train and test the Decision Tree model" in {
-
-    val model=DecisionTreeClassifier.trainDataFromFile("C:\\Users\\sweta\\Desktop\\export.csv")
-
-    val accuracy=DecisionTreeClassifier.testTheModel(model,"C:\\Users\\sweta\\Desktop\\export.csv")
-
-  //  accuracy.toFloat should be > (85)
-    assert(accuracy>85)
-  }
-
-
-  it should "successfully load  the trained model " in {
-    val model=PipelineModel.load("G:\\7200\\Ruchira\\model1")
-
-    val accuracy=DecisionTreeClassifier.testTheModel(model,"C:\\Users\\sweta\\Desktop\\export.csv")
-
-    //  accuracy.toFloat should be > (85)
-    assert(accuracy>85)
-  }
-
-  it should "it should recommend hotel clusters for specific user input " in {
-    val model=PipelineModel.load("G:\\7200\\Ruchira\\model1")
+  it should "it should recommend hotel clusters ie from 100 expedia hotel clusters for specific user input " in {
+    val model=PipelineModel.load(decisionTreeModelPath)
     val adultCount=2
     val childrenCount=1
     val roomCount=1
@@ -61,21 +66,13 @@ class DecisionTreeSpec extends FlatSpec with Matchers {
     val hotelCountry=50
     val hotelMarket=696
 
+
+
     //val User3=adultCount+","+childrenCount+","+hotelContinent+","+hotelCountry+",";
 
-    val df = List(User3(adultCount,childrenCount,roomCount,hotelContinent,hotelCountry,hotelMarket,0))
+    val df = DecisionTreeClassifier.getRecommendationsFor(model,User3(adultCount,childrenCount,roomCount,hotelContinent,hotelCountry,hotelMarket,0),dataPath)
 
-val spark=DecisionTreeClassifier.getSparkSession
-    import spark.implicits._
-
-    val rdd=spark.createDataset(df).toDF("adultCount","childrenCount","hotelContinent","hotelCountry","hotelMarket","hotelCluster")
-
-//val rdd2=rdd.as[User3]
-
-    val dtPredictions = model.transform(rdd)
-    // Select example rows to display.
-    dtPredictions.select("prediction", "multiClassLabel", "features").show(1)
-
+assert(df.toInt<100)
 
 
   }

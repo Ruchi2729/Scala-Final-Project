@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.StringIndexerModel","timestamp":1512526592240,"sparkVersion":"2.2.0","uid":"strIdx_0ef802bb808b","paramMap":{"outputCol":"adultCountCat","handleInvalid":"skip","inputCol":"adultCount"}}

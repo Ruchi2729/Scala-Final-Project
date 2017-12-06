@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.VectorAssembler","timestamp":1512526595082,"sparkVersion":"2.2.0","uid":"vecAssembler_042ffcf85e53","paramMap":{"outputCol":"rawFeatures","inputCols":["adultCountCat","childrenCountCat","roomCountCat","hotelContinentCat","hotelCountryCat","hotelMarketCat"]}}
