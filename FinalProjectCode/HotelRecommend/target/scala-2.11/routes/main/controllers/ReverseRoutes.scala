@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:G:/7200/Scala-Final-Project/FinalProjectCode/HotelRecommend/conf/routes
-// @DATE:Tue Dec 05 02:40:14 EST 2017
+// @DATE:Thu Dec 07 04:01:44 EST 2017
 
 import play.api.mvc.Call
 

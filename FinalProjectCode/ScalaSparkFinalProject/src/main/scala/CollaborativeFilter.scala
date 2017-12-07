@@ -104,7 +104,8 @@ object CollaborativeFilter {
 //    testTheModel(model,"C:\\Users\\sweta\\Desktop\\export.csv")
 //    model.save("G:\\7200\\Ruchira\\modelCollaborativeFilter")
 //
-    val model= ALSModel.load("G:\\7200\\Ruchira\\modelCollaborativeFilter")
+    //val model= ALSModel.load("G:\\7200\\Ruchira\\modelCollaborativeFilter")
+val model=ALSModel.load("G:\\7200\\Ruchira\\modelCollaborativeFilter")
 
     val predictions = model.transform(testData)
     predictions.show(50)

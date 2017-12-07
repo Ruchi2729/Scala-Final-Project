@@ -39,7 +39,7 @@ Seq[Any]()
 
               /*
                   -- GENERATED --
-                  DATE: Mon Dec 04 21:31:07 EST 2017
+                  DATE: Thu Dec 07 04:01:44 EST 2017
                   SOURCE: G:/7200/Scala-Final-Project/FinalProjectCode/HotelRecommend/app/views/index.scala.html
                   HASH: 57f7d117a54b3581c810c21c2164de6d8408ed0d
                   MATRIX: 

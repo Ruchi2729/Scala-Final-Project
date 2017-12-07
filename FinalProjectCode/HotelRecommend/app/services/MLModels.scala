@@ -4,7 +4,9 @@ package services
 import java.util.concurrent.atomic.AtomicInteger
 import javax.inject._
 
-import controllers.appUser
+import models.{DecisionTreeClassifierModel, MapReduce, User3}
+
+
 
 /**
   * This trait demonstrates how to create a component that is injected
@@ -12,7 +14,7 @@ import controllers.appUser
   * incremented number each time it is called.
   */
 trait MLModels {
-  def getRecosUsingDecisionTree(get: appUser):String
+  def getRecosUsingDecisionTree(user: User3):String
 
   def getRecosUsingCollaborativeFiltering(userid: Int) :List[String]
 
@@ -30,7 +32,12 @@ trait MLModels {
   */
 @Singleton
 class MLModels1 extends MLModels {
-  override def getRecosUsingDecisionTree(get: appUser): String= "Ruchira"
+  override def getRecosUsingDecisionTree(user: User3): String={
+    val path="G:\\7200\\Ruchira\\modelDecisionTree2"
+    val model= DecisionTreeClassifierModel.loadThemodel(path)
+
+    DecisionTreeClassifierModel.getRecommendationsFor(model,User3(user.adultCount,user.childrenCount,user.roomCount,user.hotelContinent,user.hotelCountry,user.hotelMarket,user.hotelCluster),"C:\\Users\\sweta\\Desktop\\export.csv")
+   }
 
   override def getRecosUsingCollaborativeFiltering(userid: Int):List[String] =List(userid.toString,"2","3")
 
