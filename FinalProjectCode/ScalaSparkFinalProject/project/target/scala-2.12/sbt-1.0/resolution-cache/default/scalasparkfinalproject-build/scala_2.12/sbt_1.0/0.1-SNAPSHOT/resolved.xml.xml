@@ -4,7 +4,7 @@
 		module="scalasparkfinalproject-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20171207015104"
+		publication="20171211011028"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>

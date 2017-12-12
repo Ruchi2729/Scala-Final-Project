@@ -1,5 +1,5 @@
-2017-12-07 04:10:47,600 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-13 - ApplicationTimer demo: Starting application at 2017-12-07T09:10:47.598Z.
-2017-12-07 04:10:47,924 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-13 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2017-12-11 02:09:21,208 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-8 - ApplicationTimer demo: Starting application at 2017-12-11T07:09:21.205Z.
+2017-12-11 02:09:21,792 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-8 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -7,311 +7,86 @@
     filters.ExampleFilter
     filters.ExampleFilter
 
-2017-12-07 04:10:47,929 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-13 - Application started (Dev)
-2017-12-07 04:10:54,897 [WARN] from org.apache.hadoop.util.NativeCodeLoader in application-akka.actor.default-dispatcher-2 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-2017-12-07 04:10:55,794 [WARN] from org.spark_project.jetty.util.component.AbstractLifeCycle in application-akka.actor.default-dispatcher-2 - FAILED ServerConnector@66249147{HTTP/1.1}{0.0.0.0:4040}: java.net.BindException: Address already in use: bind
-java.net.BindException: Address already in use: bind
-	at sun.nio.ch.Net.bind0(Native Method)
-	at sun.nio.ch.Net.bind(Net.java:433)
-	at sun.nio.ch.Net.bind(Net.java:425)
-	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
-	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
-	at org.spark_project.jetty.server.ServerConnector.open(ServerConnector.java:321)
-	at org.spark_project.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
-	at org.spark_project.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
-	at org.spark_project.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
-	at org.spark_project.jetty.server.Server.doStart(Server.java:366)
-	at org.spark_project.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
-	at org.apache.spark.ui.JettyUtils$.org$apache$spark$ui$JettyUtils$$connect$1(JettyUtils.scala:349)
-	at org.apache.spark.ui.JettyUtils$$anonfun$5.apply(JettyUtils.scala:359)
-	at org.apache.spark.ui.JettyUtils$$anonfun$5.apply(JettyUtils.scala:359)
-	at org.apache.spark.util.Utils$$anonfun$startServiceOnPort$1.apply$mcVI$sp(Utils.scala:2195)
-	at scala.collection.immutable.Range.foreach$mVc$sp(Range.scala:160)
-	at org.apache.spark.util.Utils$.startServiceOnPort(Utils.scala:2186)
-	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:359)
-	at org.apache.spark.ui.WebUI.bind(WebUI.scala:140)
-	at org.apache.spark.SparkContext$$anonfun$10.apply(SparkContext.scala:460)
-	at org.apache.spark.SparkContext$$anonfun$10.apply(SparkContext.scala:460)
-	at scala.Option.foreach(Option.scala:257)
-	at org.apache.spark.SparkContext.<init>(SparkContext.scala:460)
-	at org.apache.spark.SparkContext$.getOrCreate(SparkContext.scala:2313)
-	at org.apache.spark.sql.SparkSession$Builder$$anonfun$6.apply(SparkSession.scala:868)
-	at org.apache.spark.sql.SparkSession$Builder$$anonfun$6.apply(SparkSession.scala:860)
-	at scala.Option.getOrElse(Option.scala:121)
-	at org.apache.spark.sql.SparkSession$Builder.getOrCreate(SparkSession.scala:860)
-	at models.UserHiistoryHotels$.<init>(UserHiistoryHotels.scala:19)
-	at models.UserHiistoryHotels$.<clinit>(UserHiistoryHotels.scala)
-	at controllers.HomeController$$anonfun$recos$1.apply(HomeController.scala:68)
-	at controllers.HomeController$$anonfun$recos$1.apply(HomeController.scala:63)
-	at scala.Function1$$anonfun$andThen$1.apply(Function1.scala:52)
-	at play.api.mvc.ActionBuilderImpl.invokeBlock(Action.scala:482)
-	at play.api.mvc.ActionBuilderImpl.invokeBlock(Action.scala:480)
-	at play.api.mvc.ActionBuilder$$anon$2.apply(Action.scala:419)
-	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:96)
-	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:89)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2$$anonfun$1.apply(Accumulator.scala:174)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2$$anonfun$1.apply(Accumulator.scala:174)
-	at scala.util.Try$.apply(Try.scala:192)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2.apply(Accumulator.scala:174)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2.apply(Accumulator.scala:170)
-	at akka.stream.impl.Transform.apply(TraversalBuilder.scala:155)
-	at akka.stream.impl.PhasedFusingActorMaterializer.materialize(PhasedFusingActorMaterializer.scala:482)
-	at akka.stream.impl.PhasedFusingActorMaterializer.materialize(PhasedFusingActorMaterializer.scala:420)
-	at akka.stream.impl.PhasedFusingActorMaterializer.materialize(PhasedFusingActorMaterializer.scala:415)
-	at akka.stream.scaladsl.RunnableGraph.run(Flow.scala:496)
-	at play.api.libs.streams.Accumulator$$anonfun$futureToSink$1$$anonfun$apply$8.apply(Accumulator.scala:245)
-	at play.api.libs.streams.Accumulator$$anonfun$futureToSink$1$$anonfun$apply$8.apply(Accumulator.scala:244)
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:253)
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
-	at play.api.libs.streams.Execution$trampoline$.executeScheduled(Execution.scala:109)
-	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:71)
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
-	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
-	at scala.concurrent.Promise$class.complete(Promise.scala:55)
-	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153)
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:237)
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:237)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:91)
-	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
-	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:90)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:43)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2017-12-07 04:10:55,794 [WARN] from org.spark_project.jetty.util.component.AbstractLifeCycle in application-akka.actor.default-dispatcher-2 - FAILED org.spark_project.jetty.server.Server@2e3b3ca4: java.net.BindException: Address already in use: bind
-java.net.BindException: Address already in use: bind
-	at sun.nio.ch.Net.bind0(Native Method)
-	at sun.nio.ch.Net.bind(Net.java:433)
-	at sun.nio.ch.Net.bind(Net.java:425)
-	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
-	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
-	at org.spark_project.jetty.server.ServerConnector.open(ServerConnector.java:321)
-	at org.spark_project.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
-	at org.spark_project.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
-	at org.spark_project.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
-	at org.spark_project.jetty.server.Server.doStart(Server.java:366)
-	at org.spark_project.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
-	at org.apache.spark.ui.JettyUtils$.org$apache$spark$ui$JettyUtils$$connect$1(JettyUtils.scala:349)
-	at org.apache.spark.ui.JettyUtils$$anonfun$5.apply(JettyUtils.scala:359)
-	at org.apache.spark.ui.JettyUtils$$anonfun$5.apply(JettyUtils.scala:359)
-	at org.apache.spark.util.Utils$$anonfun$startServiceOnPort$1.apply$mcVI$sp(Utils.scala:2195)
-	at scala.collection.immutable.Range.foreach$mVc$sp(Range.scala:160)
-	at org.apache.spark.util.Utils$.startServiceOnPort(Utils.scala:2186)
-	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:359)
-	at org.apache.spark.ui.WebUI.bind(WebUI.scala:140)
-	at org.apache.spark.SparkContext$$anonfun$10.apply(SparkContext.scala:460)
-	at org.apache.spark.SparkContext$$anonfun$10.apply(SparkContext.scala:460)
-	at scala.Option.foreach(Option.scala:257)
-	at org.apache.spark.SparkContext.<init>(SparkContext.scala:460)
-	at org.apache.spark.SparkContext$.getOrCreate(SparkContext.scala:2313)
-	at org.apache.spark.sql.SparkSession$Builder$$anonfun$6.apply(SparkSession.scala:868)
-	at org.apache.spark.sql.SparkSession$Builder$$anonfun$6.apply(SparkSession.scala:860)
-	at scala.Option.getOrElse(Option.scala:121)
-	at org.apache.spark.sql.SparkSession$Builder.getOrCreate(SparkSession.scala:860)
-	at models.UserHiistoryHotels$.<init>(UserHiistoryHotels.scala:19)
-	at models.UserHiistoryHotels$.<clinit>(UserHiistoryHotels.scala)
-	at controllers.HomeController$$anonfun$recos$1.apply(HomeController.scala:68)
-	at controllers.HomeController$$anonfun$recos$1.apply(HomeController.scala:63)
-	at scala.Function1$$anonfun$andThen$1.apply(Function1.scala:52)
-	at play.api.mvc.ActionBuilderImpl.invokeBlock(Action.scala:482)
-	at play.api.mvc.ActionBuilderImpl.invokeBlock(Action.scala:480)
-	at play.api.mvc.ActionBuilder$$anon$2.apply(Action.scala:419)
-	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:96)
-	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:89)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2$$anonfun$1.apply(Accumulator.scala:174)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2$$anonfun$1.apply(Accumulator.scala:174)
-	at scala.util.Try$.apply(Try.scala:192)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2.apply(Accumulator.scala:174)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2.apply(Accumulator.scala:170)
-	at akka.stream.impl.Transform.apply(TraversalBuilder.scala:155)
-	at akka.stream.impl.PhasedFusingActorMaterializer.materialize(PhasedFusingActorMaterializer.scala:482)
-	at akka.stream.impl.PhasedFusingActorMaterializer.materialize(PhasedFusingActorMaterializer.scala:420)
-	at akka.stream.impl.PhasedFusingActorMaterializer.materialize(PhasedFusingActorMaterializer.scala:415)
-	at akka.stream.scaladsl.RunnableGraph.run(Flow.scala:496)
-	at play.api.libs.streams.Accumulator$$anonfun$futureToSink$1$$anonfun$apply$8.apply(Accumulator.scala:245)
-	at play.api.libs.streams.Accumulator$$anonfun$futureToSink$1$$anonfun$apply$8.apply(Accumulator.scala:244)
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:253)
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
-	at play.api.libs.streams.Execution$trampoline$.executeScheduled(Execution.scala:109)
-	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:71)
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
-	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
-	at scala.concurrent.Promise$class.complete(Promise.scala:55)
-	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153)
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:237)
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:237)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:91)
-	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
-	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:90)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:43)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2017-12-07 04:10:55,801 [WARN] from org.apache.spark.util.Utils in application-akka.actor.default-dispatcher-2 - Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
-2017-12-07 04:10:55,807 [WARN] from org.spark_project.jetty.util.component.AbstractLifeCycle in application-akka.actor.default-dispatcher-2 - FAILED ServerConnector@506b4336{HTTP/1.1}{0.0.0.0:4041}: java.net.BindException: Address already in use: bind
-java.net.BindException: Address already in use: bind
-	at sun.nio.ch.Net.bind0(Native Method)
-	at sun.nio.ch.Net.bind(Net.java:433)
-	at sun.nio.ch.Net.bind(Net.java:425)
-	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
-	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
-	at org.spark_project.jetty.server.ServerConnector.open(ServerConnector.java:321)
-	at org.spark_project.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
-	at org.spark_project.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
-	at org.spark_project.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
-	at org.spark_project.jetty.server.Server.doStart(Server.java:366)
-	at org.spark_project.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
-	at org.apache.spark.ui.JettyUtils$.org$apache$spark$ui$JettyUtils$$connect$1(JettyUtils.scala:349)
-	at org.apache.spark.ui.JettyUtils$$anonfun$5.apply(JettyUtils.scala:359)
-	at org.apache.spark.ui.JettyUtils$$anonfun$5.apply(JettyUtils.scala:359)
-	at org.apache.spark.util.Utils$$anonfun$startServiceOnPort$1.apply$mcVI$sp(Utils.scala:2195)
-	at scala.collection.immutable.Range.foreach$mVc$sp(Range.scala:160)
-	at org.apache.spark.util.Utils$.startServiceOnPort(Utils.scala:2186)
-	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:359)
-	at org.apache.spark.ui.WebUI.bind(WebUI.scala:140)
-	at org.apache.spark.SparkContext$$anonfun$10.apply(SparkContext.scala:460)
-	at org.apache.spark.SparkContext$$anonfun$10.apply(SparkContext.scala:460)
-	at scala.Option.foreach(Option.scala:257)
-	at org.apache.spark.SparkContext.<init>(SparkContext.scala:460)
-	at org.apache.spark.SparkContext$.getOrCreate(SparkContext.scala:2313)
-	at org.apache.spark.sql.SparkSession$Builder$$anonfun$6.apply(SparkSession.scala:868)
-	at org.apache.spark.sql.SparkSession$Builder$$anonfun$6.apply(SparkSession.scala:860)
-	at scala.Option.getOrElse(Option.scala:121)
-	at org.apache.spark.sql.SparkSession$Builder.getOrCreate(SparkSession.scala:860)
-	at models.UserHiistoryHotels$.<init>(UserHiistoryHotels.scala:19)
-	at models.UserHiistoryHotels$.<clinit>(UserHiistoryHotels.scala)
-	at controllers.HomeController$$anonfun$recos$1.apply(HomeController.scala:68)
-	at controllers.HomeController$$anonfun$recos$1.apply(HomeController.scala:63)
-	at scala.Function1$$anonfun$andThen$1.apply(Function1.scala:52)
-	at play.api.mvc.ActionBuilderImpl.invokeBlock(Action.scala:482)
-	at play.api.mvc.ActionBuilderImpl.invokeBlock(Action.scala:480)
-	at play.api.mvc.ActionBuilder$$anon$2.apply(Action.scala:419)
-	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:96)
-	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:89)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2$$anonfun$1.apply(Accumulator.scala:174)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2$$anonfun$1.apply(Accumulator.scala:174)
-	at scala.util.Try$.apply(Try.scala:192)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2.apply(Accumulator.scala:174)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2.apply(Accumulator.scala:170)
-	at akka.stream.impl.Transform.apply(TraversalBuilder.scala:155)
-	at akka.stream.impl.PhasedFusingActorMaterializer.materialize(PhasedFusingActorMaterializer.scala:482)
-	at akka.stream.impl.PhasedFusingActorMaterializer.materialize(PhasedFusingActorMaterializer.scala:420)
-	at akka.stream.impl.PhasedFusingActorMaterializer.materialize(PhasedFusingActorMaterializer.scala:415)
-	at akka.stream.scaladsl.RunnableGraph.run(Flow.scala:496)
-	at play.api.libs.streams.Accumulator$$anonfun$futureToSink$1$$anonfun$apply$8.apply(Accumulator.scala:245)
-	at play.api.libs.streams.Accumulator$$anonfun$futureToSink$1$$anonfun$apply$8.apply(Accumulator.scala:244)
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:253)
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
-	at play.api.libs.streams.Execution$trampoline$.executeScheduled(Execution.scala:109)
-	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:71)
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
-	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
-	at scala.concurrent.Promise$class.complete(Promise.scala:55)
-	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153)
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:237)
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:237)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:91)
-	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
-	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:90)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:43)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2017-12-07 04:10:55,807 [WARN] from org.spark_project.jetty.util.component.AbstractLifeCycle in application-akka.actor.default-dispatcher-2 - FAILED org.spark_project.jetty.server.Server@4e225c48: java.net.BindException: Address already in use: bind
-java.net.BindException: Address already in use: bind
-	at sun.nio.ch.Net.bind0(Native Method)
-	at sun.nio.ch.Net.bind(Net.java:433)
-	at sun.nio.ch.Net.bind(Net.java:425)
-	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
-	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
-	at org.spark_project.jetty.server.ServerConnector.open(ServerConnector.java:321)
-	at org.spark_project.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
-	at org.spark_project.jetty.server.ServerConnector.doStart(ServerConnector.java:236)
-	at org.spark_project.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
-	at org.spark_project.jetty.server.Server.doStart(Server.java:366)
-	at org.spark_project.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
-	at org.apache.spark.ui.JettyUtils$.org$apache$spark$ui$JettyUtils$$connect$1(JettyUtils.scala:349)
-	at org.apache.spark.ui.JettyUtils$$anonfun$5.apply(JettyUtils.scala:359)
-	at org.apache.spark.ui.JettyUtils$$anonfun$5.apply(JettyUtils.scala:359)
-	at org.apache.spark.util.Utils$$anonfun$startServiceOnPort$1.apply$mcVI$sp(Utils.scala:2195)
-	at scala.collection.immutable.Range.foreach$mVc$sp(Range.scala:160)
-	at org.apache.spark.util.Utils$.startServiceOnPort(Utils.scala:2186)
-	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:359)
-	at org.apache.spark.ui.WebUI.bind(WebUI.scala:140)
-	at org.apache.spark.SparkContext$$anonfun$10.apply(SparkContext.scala:460)
-	at org.apache.spark.SparkContext$$anonfun$10.apply(SparkContext.scala:460)
-	at scala.Option.foreach(Option.scala:257)
-	at org.apache.spark.SparkContext.<init>(SparkContext.scala:460)
-	at org.apache.spark.SparkContext$.getOrCreate(SparkContext.scala:2313)
-	at org.apache.spark.sql.SparkSession$Builder$$anonfun$6.apply(SparkSession.scala:868)
-	at org.apache.spark.sql.SparkSession$Builder$$anonfun$6.apply(SparkSession.scala:860)
-	at scala.Option.getOrElse(Option.scala:121)
-	at org.apache.spark.sql.SparkSession$Builder.getOrCreate(SparkSession.scala:860)
-	at models.UserHiistoryHotels$.<init>(UserHiistoryHotels.scala:19)
-	at models.UserHiistoryHotels$.<clinit>(UserHiistoryHotels.scala)
-	at controllers.HomeController$$anonfun$recos$1.apply(HomeController.scala:68)
-	at controllers.HomeController$$anonfun$recos$1.apply(HomeController.scala:63)
-	at scala.Function1$$anonfun$andThen$1.apply(Function1.scala:52)
-	at play.api.mvc.ActionBuilderImpl.invokeBlock(Action.scala:482)
-	at play.api.mvc.ActionBuilderImpl.invokeBlock(Action.scala:480)
-	at play.api.mvc.ActionBuilder$$anon$2.apply(Action.scala:419)
-	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:96)
-	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:89)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2$$anonfun$1.apply(Accumulator.scala:174)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2$$anonfun$1.apply(Accumulator.scala:174)
-	at scala.util.Try$.apply(Try.scala:192)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2.apply(Accumulator.scala:174)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2.apply(Accumulator.scala:170)
-	at akka.stream.impl.Transform.apply(TraversalBuilder.scala:155)
-	at akka.stream.impl.PhasedFusingActorMaterializer.materialize(PhasedFusingActorMaterializer.scala:482)
-	at akka.stream.impl.PhasedFusingActorMaterializer.materialize(PhasedFusingActorMaterializer.scala:420)
-	at akka.stream.impl.PhasedFusingActorMaterializer.materialize(PhasedFusingActorMaterializer.scala:415)
-	at akka.stream.scaladsl.RunnableGraph.run(Flow.scala:496)
-	at play.api.libs.streams.Accumulator$$anonfun$futureToSink$1$$anonfun$apply$8.apply(Accumulator.scala:245)
-	at play.api.libs.streams.Accumulator$$anonfun$futureToSink$1$$anonfun$apply$8.apply(Accumulator.scala:244)
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:253)
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
-	at play.api.libs.streams.Execution$trampoline$.executeScheduled(Execution.scala:109)
-	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:71)
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
-	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
-	at scala.concurrent.Promise$class.complete(Promise.scala:55)
-	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153)
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:237)
-	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:237)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:91)
-	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
-	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:90)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:43)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2017-12-07 04:10:55,808 [WARN] from org.apache.spark.util.Utils in application-akka.actor.default-dispatcher-2 - Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+2017-12-11 02:09:21,804 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-8 - Application started (Dev)
+2017-12-11 02:23:23,706 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-3 - ApplicationTimer demo: Starting application at 2017-12-11T07:23:23.704Z.
+2017-12-11 02:23:24,239 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-3 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    filters.ExampleFilter
+    filters.ExampleFilter
+
+2017-12-11 02:23:24,245 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-3 - Application started (Dev)
+2017-12-11 02:30:28,117 [INFO] from play.core.server.AkkaHttpServer in pool-272-thread-4 - Stopping server...
+2017-12-11 02:30:28,139 [INFO] from application in pool-272-thread-4 - ApplicationTimer demo: Stopping application at 2017-12-11T07:30:28.138Z after 425s.
+2017-12-11 02:30:57,305 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Starting application at 2017-12-11T07:30:57.303Z.
+2017-12-11 02:30:58,618 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    filters.ExampleFilter
+    filters.ExampleFilter
+
+2017-12-11 02:30:58,624 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-2 - Application started (Dev)
+2017-12-11 02:34:43,752 [INFO] from play.core.server.AkkaHttpServer in pool-276-thread-1 - Stopping server...
+2017-12-11 02:34:43,769 [INFO] from application in pool-276-thread-1 - ApplicationTimer demo: Stopping application at 2017-12-11T07:34:43.769Z after 226s.
+2017-12-11 02:35:05,088 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Starting application at 2017-12-11T07:35:05.087Z.
+2017-12-11 02:35:05,681 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-4 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    filters.ExampleFilter
+    filters.ExampleFilter
+
+2017-12-11 02:35:05,688 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-4 - Application started (Dev)
+2017-12-11 02:39:19,925 [INFO] from play.core.server.AkkaHttpServer in pool-280-thread-5 - Stopping server...
+2017-12-11 02:39:19,939 [INFO] from application in pool-280-thread-5 - ApplicationTimer demo: Stopping application at 2017-12-11T07:39:19.939Z after 254s.
+2017-12-11 02:39:55,435 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-3 - ApplicationTimer demo: Starting application at 2017-12-11T07:39:55.434Z.
+2017-12-11 02:39:56,032 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-3 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    filters.ExampleFilter
+    filters.ExampleFilter
+
+2017-12-11 02:39:56,041 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-3 - Application started (Dev)
+2017-12-11 02:40:36,137 [INFO] from play.core.server.AkkaHttpServer in pool-284-thread-2 - Stopping server...
+2017-12-11 02:40:36,162 [INFO] from application in pool-284-thread-2 - ApplicationTimer demo: Stopping application at 2017-12-11T07:40:36.162Z after 41s.
+2017-12-11 02:40:49,085 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Starting application at 2017-12-11T07:40:49.083Z.
+2017-12-11 02:40:49,635 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    filters.ExampleFilter
+    filters.ExampleFilter
+
+2017-12-11 02:40:49,643 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-2 - Application started (Dev)
+2017-12-11 02:44:50,617 [INFO] from play.core.server.AkkaHttpServer in pool-288-thread-5 - Stopping server...
+2017-12-11 02:44:50,632 [INFO] from application in pool-288-thread-5 - ApplicationTimer demo: Stopping application at 2017-12-11T07:44:50.632Z after 241s.
+2017-12-11 02:45:22,111 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Starting application at 2017-12-11T07:45:22.109Z.
+2017-12-11 02:45:22,564 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    filters.ExampleFilter
+    filters.ExampleFilter
+
+2017-12-11 02:45:22,570 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-2 - Application started (Dev)
+2017-12-11 02:48:09,967 [INFO] from play.core.server.AkkaHttpServer in pool-292-thread-2 - Stopping server...
+2017-12-11 02:48:09,985 [INFO] from application in pool-292-thread-2 - ApplicationTimer demo: Stopping application at 2017-12-11T07:48:09.985Z after 167s.
+2017-12-11 02:48:31,932 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Starting application at 2017-12-11T07:48:31.931Z.
+2017-12-11 02:48:33,125 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    filters.ExampleFilter
+    filters.ExampleFilter
+
+2017-12-11 02:48:33,130 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-2 - Application started (Dev)

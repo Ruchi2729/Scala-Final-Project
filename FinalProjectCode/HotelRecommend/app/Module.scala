@@ -26,6 +26,12 @@ class Module extends AbstractModule {
 
     // Set AtomicCounter as the implementation for Counter.
     bind(classOf[MLModels]).to(classOf[MLModels1])
+
+
+    // Set AtomicCounter as the implementation for Counter.
+    bind(classOf[ChartModel]).to(classOf[ChartModel1])
+
+
   }
 
 }

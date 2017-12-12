@@ -9,8 +9,31 @@
 		extra-sbtVersion="0.13"
 		conf="test"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20171207012650"/>
+		date="20171212121536"/>
 	<dependencies>
+		<module organisation="com.typesafe.sbt" name="sbt-rjs">
+			<revision name="1.0.7" status="release" pubdate="20141022105304" resolver="sbt-chain" artresolver="sbt-chain" extra-scalaVersion="2.10" extra-sbtVersion="0.13" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="60">
+				<metadata-artifact status="no" details="" size="1654" time="0" location="C:\Users\sweta\.ivy2\cache\scala_2.10\sbt_0.13\com.typesafe.sbt\sbt-rjs\ivy-1.0.7.xml" searched="false" origin-is-local="false" origin-location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-rjs/scala_2.10/sbt_0.13/1.0.7/ivys/ivy.xml"/>
+				<caller organisation="default" name="hotelrecommend-build" conf="test, compile, runtime" rev="1.0.7" rev-constraint-default="1.0.7" rev-constraint-dynamic="1.0.7" callerrev="0.1-SNAPSHOT" extra-scalaVersion="2.10" extra-sbtVersion="0.13"/>
+				<artifacts>
+					<artifact name="sbt-rjs" type="jar" ext="jar" status="no" details="" size="72155" time="0" location="C:\Users\sweta\.ivy2\cache\scala_2.10\sbt_0.13\com.typesafe.sbt\sbt-rjs\jars\sbt-rjs-1.0.7.jar">
+						<origin-location is-local="false" location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-rjs/scala_2.10/sbt_0.13/1.0.7/jars/sbt-rjs.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.webjars" name="rjs">
+			<revision name="2.1.15" status="release" pubdate="20140917141811" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://webjars.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="61">
+				<license name="The &quot;New&quot; BSD License or MIT License" url="https://github.com/jrburke/r.js/blob/master/LICENSE"/>
+				<metadata-artifact status="no" details="" size="3543" time="0" location="C:\Users\sweta\.ivy2\cache\org.webjars\rjs\ivy-2.1.15.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/webjars/rjs/2.1.15/rjs-2.1.15.pom"/>
+				<caller organisation="com.typesafe.sbt" name="sbt-rjs" conf="compile" rev="2.1.15" rev-constraint-default="2.1.15" rev-constraint-dynamic="2.1.15" callerrev="1.0.7"/>
+				<artifacts>
+					<artifact name="rjs" type="jar" ext="jar" status="no" details="" size="221456" time="0" location="C:\Users\sweta\.ivy2\cache\org.webjars\rjs\jars\rjs-2.1.15.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/webjars/rjs/2.1.15/rjs-2.1.15.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
 		<module organisation="com.typesafe.play" name="sbt-plugin">
 			<revision name="2.6.7" status="release" pubdate="20171102020822" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" extra-scalaVersion="2.10" extra-sbtVersion="0.13" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="3">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
@@ -27,11 +50,18 @@
 			<revision name="1.2.2" status="release" pubdate="20170823171145" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/sbt/sbt-js-engine" extra-scalaVersion="2.10" extra-sbtVersion="0.13" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="32">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="2206" time="0" location="C:\Users\sweta\.ivy2\cache\scala_2.10\sbt_0.13\com.typesafe.sbt\sbt-js-engine\ivy-1.2.2.xml" searched="false" origin-is-local="false" origin-location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-js-engine/scala_2.10/sbt_0.13/1.2.2/ivys/ivy.xml"/>
+				<caller organisation="com.typesafe.sbt" name="sbt-rjs" conf="compile" rev="1.0.1" rev-constraint-default="1.0.1" rev-constraint-dynamic="1.0.1" callerrev="1.0.7" extra-scalaVersion="2.10" extra-sbtVersion="0.13"/>
 				<caller organisation="com.typesafe.play" name="sbt-plugin" conf="compile" rev="1.2.2" rev-constraint-default="1.2.2" rev-constraint-dynamic="1.2.2" callerrev="2.6.7" extra-scalaVersion="2.10" extra-sbtVersion="0.13"/>
 				<artifacts>
 					<artifact name="sbt-js-engine" type="jar" ext="jar" status="no" details="" size="150583" time="0" location="C:\Users\sweta\.ivy2\cache\scala_2.10\sbt_0.13\com.typesafe.sbt\sbt-js-engine\jars\sbt-js-engine-1.2.2.jar">
 						<origin-location is-local="false" location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-js-engine/scala_2.10/sbt_0.13/1.2.2/jars/sbt-js-engine.jar"/>
 					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="1.0.1" evicted="latest-revision" evicted-reason="" extra-scalaVersion="2.10" extra-sbtVersion="0.13" downloaded="false" searched="false" conf="compile, default(compile)" position="-1">
+				<evicted-by rev="1.2.2"/>
+				<caller organisation="com.typesafe.sbt" name="sbt-rjs" conf="compile" rev="1.0.1" rev-constraint-default="1.0.1" rev-constraint-dynamic="1.0.1" callerrev="1.0.7" extra-scalaVersion="2.10" extra-sbtVersion="0.13"/>
+				<artifacts>
 				</artifacts>
 			</revision>
 		</module>
@@ -754,7 +784,7 @@
 			</revision>
 		</module>
 		<module organisation="org.scala-sbt" name="global-plugins">
-			<revision name="0.0" status="integration" pubdate="20171207012643" resolver="inter-project" artresolver="inter-project" extra-scalaVersion="2.10" extra-sbtVersion="0.13" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="0">
+			<revision name="0.0" status="integration" pubdate="20171212121527" resolver="inter-project" artresolver="inter-project" extra-scalaVersion="2.10" extra-sbtVersion="0.13" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="0">
 				<metadata-artifact status="failed" details="" size="0" time="0" searched="false"/>
 				<caller organisation="default" name="hotelrecommend-build" conf="test, compile, runtime" rev="0.0" rev-constraint-default="0.0" rev-constraint-dynamic="0.0" callerrev="0.1-SNAPSHOT" extra-scalaVersion="2.10" extra-sbtVersion="0.13"/>
 				<artifacts>

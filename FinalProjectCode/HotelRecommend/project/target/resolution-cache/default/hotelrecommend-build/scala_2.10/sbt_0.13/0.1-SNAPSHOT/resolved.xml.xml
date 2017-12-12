@@ -4,7 +4,7 @@
 		module="hotelrecommend-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20171207012649"
+		publication="20171212121536"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>
@@ -43,5 +43,6 @@
 			<artifact name="global-plugins" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 		</dependency>
 		<dependency org="com.typesafe.play" name="sbt-plugin" rev="2.6.7" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
+		<dependency org="com.typesafe.sbt" name="sbt-rjs" rev="1.0.7" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
 	</dependencies>
 </ivy-module>

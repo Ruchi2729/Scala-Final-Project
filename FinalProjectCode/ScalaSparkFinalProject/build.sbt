@@ -20,3 +20,7 @@ libraryDependencies += "org.scalatest" %% "scalatest" % scalaTestVersion % "test
 
 libraryDependencies += "org.scalamock" %% "scalamock-scalatest-support" % "3.5.0" % "test"
 
+// https://mvnrepository.com/artifact/org.json4s/json4s-jackson
+libraryDependencies += "org.json4s" %% "json4s-jackson" % "3.2.9"
+
+

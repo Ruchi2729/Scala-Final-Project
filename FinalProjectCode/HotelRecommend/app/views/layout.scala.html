@@ -8,6 +8,18 @@
         <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap-theme.min.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
         <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/style.css")">
+        <script type="text/javascript" src=@routes.Assets.versioned("js/d3.v3.min.js").url></script>
+        <script type="text/javascript" src=@routes.Assets.versioned("js/bar2.js").url></script>
+        <script type="text/javascript" src=@routes.Assets.versioned("js/bar3.js").url></script>
+
+        <script
+                type="text/javascript"
+                src=@routes.Assets.versioned("lib/requirejs/require.js").url
+                data-main=@routes.Assets.versioned("js/main.js").url>
+        </script>
+
+
+
         <!-- Latest compiled and minified CSS -->
 
     </head>
@@ -20,7 +32,7 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#">User's Page</a></li>
-                <li><a href="#">Analytics Dashboard</a></li>
+                <li><a href="/charts">Analytics Dashboard</a></li>
                 <li><a href="#">Page 3</a></li>
             </ul>
         </div>

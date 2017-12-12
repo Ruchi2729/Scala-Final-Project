@@ -9,6 +9,8 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 GET    /rec                         controllers.HomeController.recos
 GET    /rec2                        controllers.HomeController.recos2
+GET    /charts                        controllers.ChartController.home()
+
 
 
 
