@@ -49,25 +49,25 @@ val spark = SparkSession.builder().appName("My Application").master("local").get
   }
 
 */
-  def main(args: Array[String]): Unit = {
-
-   // getNumberOfBookingsForEachCountry()
-
-    val rdd = spark.read.textFile("C:\\Users\\sweta\\Desktop\\export.csv").rdd
-
-    val trainingheader = rdd.first()
-
-    val rdd2=rdd.filter(row => row != trainingheader).
-      filter(row=>row(18)!=0).
-      map(line =>line.split(",")).
-      map(lst=>{val date=lst(0).split("-")
-      val year=date(0)+"/"+date(1)
-        (year,1)})
-    val rdd4=rdd2.reduceByKey(_ + _)
-    rdd4.collect.foreach(println)
-
-
-
-  }
+//  def main(args: Array[String]): Unit = {
+//
+//   // getNumberOfBookingsForEachCountry()
+//
+//    val rdd = spark.read.textFile("C:\\Users\\sweta\\Desktop\\export.csv").rdd
+//
+//    val trainingheader = rdd.first()
+//
+//    val rdd2=rdd.filter(row => row != trainingheader).
+//      filter(row=>row(18)!=0).
+//      map(line =>line.split(",")).
+//      map(lst=>{val date=lst(0).split("-")
+//      val year=date(0)+"/"+date(1)
+//        (year,1)})
+//    val rdd4=rdd2.reduceByKey(_ + _)
+//    rdd4.collect.foreach(println)
+//
+//
+//
+//  }
 
 }

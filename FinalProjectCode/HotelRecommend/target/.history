@@ -105,3 +105,11 @@ package
 help run
 run
 test
+compile
+run
+compile
+run
+compile
+run
+compile
+run

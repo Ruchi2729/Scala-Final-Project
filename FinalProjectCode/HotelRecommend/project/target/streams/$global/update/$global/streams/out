@@ -17000,7 +17000,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#template-resolver;0.1!template-resolver.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.6!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2183ms :: artifacts dl 96ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2086ms :: artifacts dl 81ms[0m
 [0m[[0mdebug[0m] [0m	report for default#hotelrecommend-build;0.1-SNAPSHOT compile produced in G:\7200\Scala-Final-Project\FinalProjectCode\HotelRecommend\project\target\resolution-cache\reports\default-hotelrecommend-build-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#hotelrecommend-build;0.1-SNAPSHOT runtime produced in G:\7200\Scala-Final-Project\FinalProjectCode\HotelRecommend\project\target\resolution-cache\reports\default-hotelrecommend-build-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#hotelrecommend-build;0.1-SNAPSHOT test produced in G:\7200\Scala-Final-Project\FinalProjectCode\HotelRecommend\project\target\resolution-cache\reports\default-hotelrecommend-build-test.xml[0m
@@ -17014,5 +17014,5 @@
 [0m[[0mdebug[0m] [0m	report for default#hotelrecommend-build;0.1-SNAPSHOT docs produced in G:\7200\Scala-Final-Project\FinalProjectCode\HotelRecommend\project\target\resolution-cache\reports\default-hotelrecommend-build-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#hotelrecommend-build;0.1-SNAPSHOT pom produced in G:\7200\Scala-Final-Project\FinalProjectCode\HotelRecommend\project\target\resolution-cache\reports\default-hotelrecommend-build-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#hotelrecommend-build;0.1-SNAPSHOT scala-tool produced in G:\7200\Scala-Final-Project\FinalProjectCode\HotelRecommend\project\target\resolution-cache\reports\default-hotelrecommend-build-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (2183ms resolve - 96ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (2086ms resolve - 81ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
