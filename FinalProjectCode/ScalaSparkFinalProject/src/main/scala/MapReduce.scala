@@ -63,6 +63,13 @@ object MapReduce {
 
 }
 
+  def getNumberOfBookingsTotally(sc: SparkContext, filePath: String) = {
+    val rdd = sc.textFile(filePath);
+    val trainingheader = rdd.first()
+    val rdd2 = rdd.filter(row => row != trainingheader).filter(row => row(18) != 0).map(line => line.split(",")).map(line => (line(7), 1))
+    val rdd4 = rdd2.reduceByKey(_ + _)
+    rdd4.collect.foreach(println)
+  }
 
 
   def main(args: Array[String]): Unit = {

@@ -16,6 +16,7 @@ libraryDependencies ++= Seq(
 
 libraryDependencies += "org.apache.spark" %% "spark-mllib" % "2.2.0"
 libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.2.0"
+libraryDependencies += "org.apache.spark" %% "spark-streaming" % "2.2.0"
 libraryDependencies += "org.scalatest" %% "scalatest" % scalaTestVersion % "test"
 
 libraryDependencies += "org.scalamock" %% "scalamock-scalatest-support" % "3.5.0" % "test"
