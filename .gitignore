@@ -6,3 +6,13 @@
 */logs
 *.iml
 rules
+
+*/project
+*/*/*/target
+*/.idea
+*/bin
+*/RUNNING_PID
+*/logs
+*.iml
+rules
+
