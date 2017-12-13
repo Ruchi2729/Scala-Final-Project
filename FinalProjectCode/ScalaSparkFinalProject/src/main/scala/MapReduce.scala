@@ -1,4 +1,5 @@
 
+import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -15,26 +16,34 @@ object MapReduce {
   val sc = new SparkContext(conf)
 
 
-  def getNumberOfBookingsForEachuser()={
+  def getNumberOfBookingsForEachuser(dataPath:String) :RDD[(String, Int)] = {
     /// Total number of booking for each user
-
-    val rdd = sc.textFile("C:\\Users\\sweta\\Desktop\\export.csv");
-
+    val rdd = sc.textFile(dataPath);
     val trainingheader = rdd.first()
-
-    val rdd2=rdd.filter(row => row != trainingheader).filter(row=>row(18)!=0).map(line =>line.split(",")).map(line=>(line(7),1))
-    //
-    //    val rdd2=rdd.map(line =>line.split(",")).map(line=>(line(7),1))
-    //    //val rdd3=rdd2.filter({case (k,v)=>k._1==("427859") })
-    val rdd4=rdd2.reduceByKey(_ + _)
-    rdd4.collect.foreach(println)
+    val rdd2 = rdd.filter(row => row != trainingheader).filter(row => row(18) != 0).map(line => line.split(",")).map(line => (line(7), 1))
+    rdd2.reduceByKey(_ + _)
   }
 
+//  def getNumberOfBookingsForEachuser()={
+//    /// Total number of booking for each user
+//
+//    val rdd = sc.textFile("C:\\Users\\sweta\\Desktop\\export.csv");
+//
+//    val trainingheader = rdd.first()
+//
+//    val rdd2=rdd.filter(row => row != trainingheader).filter(row=>row(18)!=0).map(line =>line.split(",")).map(line=>(line(7),1))
+//    //
+//    //    val rdd2=rdd.map(line =>line.split(",")).map(line=>(line(7),1))
+//    //    //val rdd3=rdd2.filter({case (k,v)=>k._1==("427859") })
+//    val rdd4=rdd2.reduceByKey(_ + _)
+//    rdd4.collect.foreach(println)
+//  }
 
-  def getNumberOfBookingsForEachCountry()={
+
+  def getNumberOfBookingsForEachCountry(dataPath:String):RDD[(String, Int)]={
     /// Total number of bookings in each country
 
-    val rdd = sc.textFile("C:\\Users\\sweta\\Desktop\\export.csv");
+    val rdd = sc.textFile(dataPath);
 
     val trainingheader = rdd.first()
 
@@ -42,13 +51,13 @@ object MapReduce {
     //
     //    val rdd2=rdd.map(line =>line.split(",")).map(line=>(line(7),1))
     //    //val rdd3=rdd2.filter({case (k,v)=>k._1==("427859") })
-    val rdd4=rdd2.reduceByKey(_ + _)
-    rdd4.collect.foreach(println)
+    rdd2.reduceByKey(_ + _)
+   // rdd4.collect.foreach(println)
   }
 
-  def getNumberOfBookingsEveryMonth() =
+  def getNumberOfBookingsEveryMonth(dataPath:String):RDD[(String, Int)] =
 {
-  val rdd = sc.textFile("C:\\Users\\sweta\\Desktop\\export.csv")
+  val rdd = sc.textFile(dataPath)
 
   val trainingheader = rdd.first()
 
@@ -58,8 +67,8 @@ object MapReduce {
     map(lst=>{val date=lst(0).split("-")
       val year=date(0)+"/"+date(1)
       (year,1)})
-  val rdd4=rdd2.reduceByKey(_ + _)
-  rdd4.collect.foreach(println)
+  rdd2.reduceByKey(_ + _)
+ // rdd4.collect.foreach(println)
 
 }
 
@@ -68,21 +77,15 @@ object MapReduce {
     val trainingheader = rdd.first()
     val rdd2 = rdd.filter(row => row != trainingheader).filter(row => row(18) != 0).map(line => line.split(",")).map(line => (line(7), 1))
     val rdd4 = rdd2.reduceByKey(_ + _)
-    rdd4.collect.foreach(println)
+   // rdd4.collect.foreach(println)
   }
 
 
   def main(args: Array[String]): Unit = {
 
-    val rdd = sc.textFile("C:\\Users\\sweta\\Desktop\\export.csv");
+    val dataPath= "C:\\Users\\sweta\\Desktop\\export.csv"
 
-    val trainingheader = rdd.first()
-
-    val rdd2=rdd.filter(row => row != trainingheader).filter(row=>row(18)!=0).map(line =>line.split(",")).map(line=>(line(7),1))
-    //
-    //    val rdd2=rdd.map(line =>line.split(",")).map(line=>(line(7),1))
-    //    //val rdd3=rdd2.filter({case (k,v)=>k._1==("427859") })
-    val rdd4=rdd2.reduceByKey(_ + _)
+    val rdd4=getNumberOfBookingsForEachCountry(dataPath)
 
     val sqlContext = new SQLContext(sc)
     import sqlContext.implicits._

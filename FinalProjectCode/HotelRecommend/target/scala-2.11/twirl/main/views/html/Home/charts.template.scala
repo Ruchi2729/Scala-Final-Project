@@ -32,12 +32,15 @@ Seq[Any](format.raw/*1.60*/("""
 
 
 <div class="container">
+    <h1>Total Number Of bookings in every month of the year</h1>
     <div class="row" id="char1">
 
-    </div>
+    </div><br>
+    <h1>Total Number Of bookings for Every Country</h1>
     <div class="row" id="char2">
 
     </div>
+    <h1>Total Number Of bookings by some users</h1>
     <div class="row" id="char3">
 
     </div>
@@ -60,9 +63,9 @@ Seq[Any](format.raw/*1.60*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Dec 12 15:10:17 EST 2017
+                  DATE: Wed Dec 13 16:30:50 EST 2017
                   SOURCE: G:/7200/Scala-Final-Project/FinalProjectCode/HotelRecommend/app/views/Home/charts.scala.html
-                  HASH: 19691fad8173ab11ef8c94443d64dbaa9d02386e
+                  HASH: 424d5dc6146d7d64fbb6e05049a38c8cc8af6d35
                   MATRIX: 748->1|901->59|929->62|972->97|1010->98|1042->104
                   LINES: 21->1|26->1|27->2|27->2|27->2|30->5
                   -- GENERATED --

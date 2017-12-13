@@ -22,3 +22,7 @@ body{
 	  stroke: #000;
 	  shape-rendering: crispEdges;
 	}
+
+	#char1,#char2,#char3{
+	background-color: white;
+	}

@@ -83,51 +83,73 @@ object CollaborativeFilter {
       .setLabelCol("isBooking")
       .setPredictionCol("prediction")
     val rmse = evaluator.evaluate(predictions)
-   rmse*100
+   rmse
   }
 
-//  def getUserRecommendationsFor(userId:Int,model:ALSModel,filePath:String) = {
-//    val data=filterAndParseToDataset(filePath)
-//    val Array(trainData, testData) = data.randomSplit(Array(0.8, 0.2))
-//
-//    model.setColdStartStrategy("drop")
-//    val predictions = model.
-//
-//  }
 
+    def getRecommendationsForAllUsers(model:ALSModel,filePath:String,noOfrecos:Int):Int = {
+      val data=filterAndParseToDataset(filePath)
+      val Array(trainData, testData) = data.randomSplit(Array(0.8, 0.2))
+
+      model.setColdStartStrategy("drop")
+
+      val predictions = model.transform(testData)
+
+      predictions.show(50)
+      val userRecs = model.recommendForAllUsers(noOfrecos)
+
+      userRecs.count().toInt
+
+    }
+
+  def getUserRecommendationsFor(userId:Int,model:ALSModel):Array[String] = {
+   // val model=ALSModel.load(modelPath)
+
+  //  val predictions = model.transform(testData)
+  //  predictions.show(50)
+
+    // Generate top 10 hotel cluster recommendations for each user
+    val userRecs = model.recommendForAllUsers(5)
+
+    val userSpecificrecos=userRecs.select($"recommendations").where($"userId"===userId).show()
+
+    // val x=userRecs.select($"recommendations").where($"userId"===57020).rdd.first().get(0)
+    val y=userRecs.select($"recommendations").where($"userId"===userId).rdd.first().getList(0).toArray()
+
+    val allrecos=y.map(x=>{
+      val r=x.toString.split(",")
+      r(0).substring(1)
+    })
+
+
+
+    y.foreach(print)
+    print(" ")
+    allrecos.foreach(x=>print(x+" "))
+
+    allrecos
+
+  }
+def loadThemodel(path:String):ALSModel={
+  ALSModel.read.load(path)
+}
   def main(args: Array[String]): Unit = {
 
     val data=filterAndParseToDataset("C:\\Users\\sweta\\Desktop\\export.csv")
     val Array(trainData, testData) = data.randomSplit(Array(0.8, 0.2))
-//    val model=tainCollaborativeFilter("C:\\Users\\sweta\\Desktop\\export.csv")
-//    testTheModel(model,"C:\\Users\\sweta\\Desktop\\export.csv")
-//    model.save("G:\\7200\\Ruchira\\modelCollaborativeFilter")
-//
-    //val model= ALSModel.load("G:\\7200\\Ruchira\\modelCollaborativeFilter")
-val model=ALSModel.load("G:\\7200\\Ruchira\\modelCollaborativeFilter")
+val model=tainCollaborativeFilter("C:\\Users\\sweta\\Desktop\\export.csv")
 
     val predictions = model.transform(testData)
     predictions.show(50)
 
     // Generate top 10 hotel cluster recommendations for each user
     val userRecs = model.recommendForAllUsers(5)
+
     val userSpecificrecos=userRecs.select($"recommendations").where($"userId"===57020).show()
 
    // val x=userRecs.select($"recommendations").where($"userId"===57020).rdd.first().get(0)
     val y=userRecs.select($"recommendations").where($"userId"===57020).rdd.first().getList(0).toArray()
- //
-//
-//    var recos = new ListBuffer[String]()
-//for(i<-0 to y.size()){
-//  val t:util.List[Float]=y.get(0)
-//  recos += t.get(0).toString
-//
-//}
-//
-//    val listOfAllRecos=recos.toList
-//
-//    listOfAllRecos.map(print)
-//
+
 
     val allrecos=y.map(x=>{
       val r=x.toString.split(",")

@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.StringIndexerModel","timestamp":1513200085872,"sparkVersion":"2.2.0","uid":"strIdx_2c609f84c960","paramMap":{"handleInvalid":"skip","outputCol":"roomCountCat","inputCol":"roomCount"}}

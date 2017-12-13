@@ -113,3 +113,5 @@ compile
 run
 compile
 run
+help run
+run

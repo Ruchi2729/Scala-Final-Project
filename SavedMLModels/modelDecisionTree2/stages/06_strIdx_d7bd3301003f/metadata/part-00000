@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.StringIndexerModel","timestamp":1513200089314,"sparkVersion":"2.2.0","uid":"strIdx_d7bd3301003f","paramMap":{"handleInvalid":"skip","inputCol":"hotelMarket","outputCol":"hotelMarketCat"}}

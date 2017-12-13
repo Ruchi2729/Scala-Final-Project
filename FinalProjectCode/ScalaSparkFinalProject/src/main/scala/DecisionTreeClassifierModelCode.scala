@@ -215,12 +215,12 @@ object DecisionTreeClassifierModel {
   }
 
   def main(args: Array[String]): Unit = {
-//    val model=trainDataFromFile("C:\\Users\\sweta\\Desktop\\export.csv")
+    val model=trainDataFromFile("C:\\Users\\sweta\\Desktop\\export.csv")
 //    testTheModel(model,"C:\\Users\\sweta\\Desktop\\export.csv")
 //
 //    model.save("G:\\7200\\Ruchira\\modelDecisionTree")
 
-    val model=PipelineModel.read.load("G:\\7200\\Ruchira\\modelDecisionTree")
+    //val model=loadThemodel("G:\\7200\\Ruchira\\modelDecisionTree")
     testTheModel(model,"C:\\Users\\sweta\\Desktop\\export.csv")
 
   }

@@ -30,43 +30,9 @@ Seq[Any](format.raw/*1.60*/("""
     """),format.raw/*5.5*/("""<!--<p>-->
        <!--Hotel Recommend-->
     <!--</p>-->
-    >
-
-<div class="well well-lg">Select the User(Recommendation According to similar Users: Collaborative filtering)
-    <form name="input" action="/rec" method="get" >
-
-        <!--<select name="id">-->
-            <!--<option value=1234>User1</option>-->
-            <!--<option value=1234>User2</option>-->
-            <!--<option value=1234>User3</option>-->
-            <!--<option value=1234>User4</option>-->
-        <!--</select>-->
-        <!--<br><br>-->
-
-        <div class="form-group">
-            <label for="userid">User Id</label>
-            <input type="number" class="form-control" name="userid" id="userid" placeholder="Enter User Id">
-        </div>
-        <input type="submit">
+    <h1>User Page</h1>
 
 
-
-
-
-    </form>
-    <div class="well well-sm" id="colabRecos">Recommendations:
-        """),_display_(/*33.10*/for(index <- 0 until listOfRecos.size) yield /*33.48*/{_display_(Seq[Any](format.raw/*33.49*/("""
-        """),_display_(/*34.10*/if(index % 3 == 0)/*34.28*/{_display_(Seq[Any](format.raw/*34.29*/("""
-        """),format.raw/*35.9*/("""<ul>
-            """)))}),format.raw/*36.14*/("""
-
-            """),format.raw/*38.13*/("""<li>"""),_display_(/*38.18*/listOfRecos(index)),format.raw/*38.36*/("""</li>
-
-            """),_display_(/*40.14*/if(index % 3 == 2 || index == (listOfRecos.size - 1))/*40.67*/{_display_(Seq[Any](format.raw/*40.68*/("""
-        """),format.raw/*41.9*/("""</ul>
-        """)))}),format.raw/*42.10*/("""
-        """)))}),format.raw/*43.10*/("""</div>
-</div>
 <div class="well well-lg">Give User Input(Recommendations based on Decision Tree Predictive Model)
     <form action="/rec2" method="get" >
         <div class="form-group">
@@ -100,10 +66,45 @@ Seq[Any](format.raw/*1.60*/("""
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     <div class="well well-sm">Recommendations as per user input(the hotelClusterId recommended by predicting the one user is most likey to choose
-        """),_display_(/*78.10*/recommendedHotelCluster),format.raw/*78.33*/("""
-    """),format.raw/*79.5*/("""</div>
+        """),_display_(/*44.10*/recommendedHotelCluster),format.raw/*44.33*/("""
+    """),format.raw/*45.5*/("""</div>
 </div>
 
+<div class="well well-lg">Select the User(Recommendation According to similar Users: Collaborative filtering)
+    <form name="input" action="/rec" method="get" >
+
+        <!--<select name="id">-->
+        <!--<option value=1234>User1</option>-->
+        <!--<option value=1234>User2</option>-->
+        <!--<option value=1234>User3</option>-->
+        <!--<option value=1234>User4</option>-->
+        <!--</select>-->
+        <!--<br><br>-->
+
+        <div class="form-group">
+            <label for="userid">User Id</label>
+            <input type="number" class="form-control" name="userid" id="userid" placeholder="Enter User Id">
+        </div>
+        <input type="submit">
+
+
+
+
+
+    </form>
+    <div class="well well-sm" id="colabRecos">Recommendations:
+        """),_display_(/*71.10*/for(index <- 0 until listOfRecos.size) yield /*71.48*/{_display_(Seq[Any](format.raw/*71.49*/("""
+        """),_display_(/*72.10*/if(index % 3 == 0)/*72.28*/{_display_(Seq[Any](format.raw/*72.29*/("""
+        """),format.raw/*73.9*/("""<ul>
+            """)))}),format.raw/*74.14*/("""
+
+            """),format.raw/*76.13*/("""<li>"""),_display_(/*76.18*/listOfRecos(index)),format.raw/*76.36*/("""</li>
+
+            """),_display_(/*78.14*/if(index % 3 == 2 || index == (listOfRecos.size - 1))/*78.67*/{_display_(Seq[Any](format.raw/*78.68*/("""
+        """),format.raw/*79.9*/("""</ul>
+        """)))}),format.raw/*80.10*/("""
+        """)))}),format.raw/*81.10*/("""</div>
+</div>
 
 """)))}))
       }
@@ -121,11 +122,11 @@ Seq[Any](format.raw/*1.60*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Dec 12 13:29:44 EST 2017
+                  DATE: Wed Dec 13 16:30:50 EST 2017
                   SOURCE: G:/7200/Scala-Final-Project/FinalProjectCode/HotelRecommend/app/views/Home/HomePage.scala.html
-                  HASH: 111397e2bb05bfa474b0d7051346995b2424b7dc
-                  MATRIX: 750->1|903->59|931->62|974->97|1012->98|1048->108|1950->983|2004->1021|2043->1022|2081->1033|2108->1051|2147->1052|2184->1062|2234->1081|2278->1097|2310->1102|2349->1120|2398->1142|2460->1195|2499->1196|2536->1206|2583->1222|2625->1233|4599->3180|4643->3203|4676->3209
-                  LINES: 21->1|26->1|27->2|27->2|27->2|30->5|58->33|58->33|58->33|59->34|59->34|59->34|60->35|61->36|63->38|63->38|63->38|65->40|65->40|65->40|66->41|67->42|68->43|103->78|103->78|104->79
+                  HASH: 60f503ecb02cc588b25e79bb56180000f3e13123
+                  MATRIX: 750->1|903->59|931->62|974->97|1012->98|1048->108|3094->2127|3138->2150|3171->2156|4006->2964|4060->3002|4099->3003|4137->3014|4164->3032|4203->3033|4240->3043|4290->3062|4334->3078|4366->3083|4405->3101|4454->3123|4516->3176|4555->3177|4592->3187|4639->3203|4681->3214
+                  LINES: 21->1|26->1|27->2|27->2|27->2|30->5|69->44|69->44|70->45|96->71|96->71|96->71|97->72|97->72|97->72|98->73|99->74|101->76|101->76|101->76|103->78|103->78|103->78|104->79|105->80|106->81
                   -- GENERATED --
               */
           

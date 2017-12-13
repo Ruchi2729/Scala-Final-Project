@@ -5,43 +5,9 @@
     <!--<p>-->
        <!--Hotel Recommend-->
     <!--</p>-->
-    >
-
-<div class="well well-lg">Select the User(Recommendation According to similar Users: Collaborative filtering)
-    <form name="input" action="/rec" method="get" >
-
-        <!--<select name="id">-->
-            <!--<option value=1234>User1</option>-->
-            <!--<option value=1234>User2</option>-->
-            <!--<option value=1234>User3</option>-->
-            <!--<option value=1234>User4</option>-->
-        <!--</select>-->
-        <!--<br><br>-->
-
-        <div class="form-group">
-            <label for="userid">User Id</label>
-            <input type="number" class="form-control" name="userid" id="userid" placeholder="Enter User Id">
-        </div>
-        <input type="submit">
+    <h1>User Page</h1>
 
 
-
-
-
-    </form>
-    <div class="well well-sm" id="colabRecos">Recommendations:
-        @for(index <- 0 until listOfRecos.size){
-        @if(index % 3 == 0){
-        <ul>
-            }
-
-            <li>@listOfRecos(index)</li>
-
-            @if(index % 3 == 2 || index == (listOfRecos.size - 1)){
-        </ul>
-        }
-        }</div>
-</div>
 <div class="well well-lg">Give User Input(Recommendations based on Decision Tree Predictive Model)
     <form action="/rec2" method="get" >
         <div class="form-group">
@@ -79,5 +45,40 @@
     </div>
 </div>
 
+<div class="well well-lg">Select the User(Recommendation According to similar Users: Collaborative filtering)
+    <form name="input" action="/rec" method="get" >
+
+        <!--<select name="id">-->
+        <!--<option value=1234>User1</option>-->
+        <!--<option value=1234>User2</option>-->
+        <!--<option value=1234>User3</option>-->
+        <!--<option value=1234>User4</option>-->
+        <!--</select>-->
+        <!--<br><br>-->
+
+        <div class="form-group">
+            <label for="userid">User Id</label>
+            <input type="number" class="form-control" name="userid" id="userid" placeholder="Enter User Id">
+        </div>
+        <input type="submit">
+
+
+
+
+
+    </form>
+    <div class="well well-sm" id="colabRecos">Recommendations:
+        @for(index <- 0 until listOfRecos.size){
+        @if(index % 3 == 0){
+        <ul>
+            }
+
+            <li>@listOfRecos(index)</li>
+
+            @if(index % 3 == 2 || index == (listOfRecos.size - 1)){
+        </ul>
+        }
+        }</div>
+</div>
 
 }
