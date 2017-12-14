@@ -8,3 +8,14 @@
     filters.ExampleFilter
 
 2017-12-13 16:30:56,016 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-9 - Application started (Dev)
+2017-12-13 16:36:33,518 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-12 - ApplicationTimer demo: Stopping application at 2017-12-13T21:36:33.518Z after 338s.
+2017-12-13 16:36:33,826 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-12 - ApplicationTimer demo: Starting application at 2017-12-13T21:36:33.824Z.
+2017-12-13 16:36:33,901 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-12 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    filters.ExampleFilter
+    filters.ExampleFilter
+
+2017-12-13 16:36:33,902 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-12 - Application started (Dev)

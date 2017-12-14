@@ -12,7 +12,7 @@ class DecisionTreeSpec extends FlatSpec with Matchers {
 
   val dataPath="C:\\Users\\sweta\\Desktop\\export.csv"
 
-  val decisionTreeModelPath="G:\\7200\\Ruchira\\modelDecisionTree2"
+  val decisionTreeModelPath="G:\\7200\\Ruchira\\modelDecisionTree"
 
   behavior of "Decision Tree Classifier Model"
 

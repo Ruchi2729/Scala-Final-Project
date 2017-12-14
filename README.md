@@ -1,3 +1,36 @@
+We have two sbt projects :-
+A) ScalaSparkFinalProject : Contains code for all data processing and Machine Learning.
+ Scala 2.11.8, Spark 2.2.0 
+Download the csv file from
+ https://drive.google.com/a/husky.neu.edu/file/d/1hfeQWPX-u9dkQDA645A0dcScji2tiX66/view?usp=sharing
+
+And keep it in you local directory.
+
+To run all the spec files: In each spec file Give data path where downloaded  csv file is kept
+ val dataPath="C:\\Users\\sweta\\Desktop\\export.csv"
+CollaborativeFilteingSpec file give the local directory path where ML model for collaborative filtering will be savedval collaborativeModelPath="G:\\7200\\Ruchira\\collaborativeFilter2“
+In DecisionTreeModelSpec give the local directory path where ML model for Decision TreeClassifier will be saved
+
+
+After Successfully Running the all spec files you will see  bot the machine learning Models are persisted at the give directory
+B]HotelRecommend : Scala Play Web Project with Spark 2.1
+Go to services package in app directory and give path values as the local directory path where Decision Tree model is saved.
+
+
+Go to the UserHistoryHotels class file in models package and give data path where csv file is saved.
+
+15. Go to sbt console and execute following commands
+Clean
+Compile
+Run
+
+Launch : http://localhost:9000/  to see the web page.
+
+
+
+
+
+
 [![CircleCI](https://circleci.com/gh/Chau-Xochitl/Scala-Final-Project.svg?style=svg)](https://circleci.com/gh/Chau-Xochitl/Scala-Final-Project)
 # Scala
 

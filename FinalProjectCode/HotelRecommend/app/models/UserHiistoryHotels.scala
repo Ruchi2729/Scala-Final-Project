@@ -27,8 +27,8 @@ object UserHiistoryHotels {
 
   import spark.implicits._
   def getHistoricalBookingsOfUser(userId:String):List[String]={
-
-    val file=spark.read.textFile("C:\\Users\\sweta\\Desktop\\export.csv")
+val dataPath="C:\\Users\\sweta\\Desktop\\export.csv"
+    val file=spark.read.textFile(dataPath)
 
     val trainingheader = file.first()
 
