@@ -7,13 +7,18 @@ Download the csv file from
 And keep it in you local directory.
 
 To run all the spec files: In each spec file Give data path where downloaded  csv file is kept
- val dataPath="C:\\Users\\sweta\\Desktop\\export.csv"
-CollaborativeFilteingSpec file give the local directory path where ML model for collaborative filtering will be savedval collaborativeModelPath="G:\\7200\\Ruchira\\collaborativeFilter2“
+ 
+ val dataPath="C:\\Users\\sweta\\Desktop\\export.csv"
+ 
+In CollaborativeFilteingSpec file give the local directory path where ML model for collaborative filtering will be savedval collaborativeModelPath="G:\\7200\\Ruchira\\collaborativeFilter2“
+
 In DecisionTreeModelSpec give the local directory path where ML model for Decision TreeClassifier will be saved
 
 
-After Successfully Running the all spec files you will see  bot the machine learning Models are persisted at the give directory
+After Successfully Running the all spec files you will see  both the machine learning Models(meta files etc) are persisted at the given directory
+
 B]HotelRecommend : Scala Play Web Project with Spark 2.1
+
 Go to services package in app directory and give path values as the local directory path where Decision Tree model is saved.
 
 
